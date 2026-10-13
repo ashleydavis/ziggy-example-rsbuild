@@ -49,13 +49,12 @@
     "setup": "bash ./scripts/setup.sh",
     "compile:zig": "bash ./scripts/zig-packages.sh build && bash ./scripts/zig-packages.sh cross",
     "test:zig": "bash ./scripts/zig-packages.sh test",
-    "test:android-shell": "bash ./scripts/test-android-shell.sh",
     "test:zig:android": "bash ./scripts/test-zig-mobile.sh android",
     "test:zig:ios": "bash ./scripts/test-zig-mobile.sh ios",
     "distribute:android": "bash ./scripts/distribute-android.sh"
   },
   "dependencies": {
-    "ziggy-ui": "file:../ziggy/packages/ziggy/ui"
+    "ziggy-ui": "git+https://github.com/ashleydavis/ziggy.git#v0.0.1"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",

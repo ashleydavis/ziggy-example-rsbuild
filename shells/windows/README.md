@@ -1,6 +1,6 @@
 # Ziggy Rsbuild example, Windows native app
 
-The Windows executable of the Ziggy Rsbuild example. `src/main.zig` names the app and hands it to `ziggy-native-windows` (`../ziggy/packages/ziggy/native/windows`), which does everything else.
+The Windows executable of the Ziggy Rsbuild example. `src/main.zig` names the app and hands it to `ziggy-native-windows` (`packages/ziggy/native/windows` in Ziggy's repository), which does everything else.
 
 ## What the native app does
 

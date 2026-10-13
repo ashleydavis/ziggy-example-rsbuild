@@ -1,6 +1,6 @@
 # Ziggy Rsbuild example
 
-The Ziggy template built with Rsbuild instead of Vite, in a folder of its own, to prove that Ziggy does not depend on which bundler and dev server an app uses. It is the same app as the Ziggy test app (`../ziggy-example`), renamed, with Rsbuild building its UI and serving it in dev mode, and it takes Ziggy from the checkout beside it by local path, as [Building your app](../ziggy/docs/building-your-app.md) describes. Its dev mode runs `rsbuild dev` as its `dev:ui` script, with nothing of Ziggy's in `rsbuild.config.ts`, which is all an app on any bundler needs for Ziggy's dev host to front its dev server. Everything below is the example's description, which holds for it too. See [Ziggy architecture](../ziggy/docs/architecture.md) for how the parts fit.
+The Ziggy template built with Rsbuild instead of Vite, in a folder of its own, to prove that Ziggy does not depend on which bundler and dev server an app uses. It is the same app as the [Ziggy test app](https://github.com/ashleydavis/ziggy-example-vite), renamed, with Rsbuild building its UI and serving it in dev mode, and it takes Ziggy from a version tag of Ziggy's repository, as [Building your app](https://github.com/ashleydavis/ziggy/blob/main/docs/building-your-app.md) describes. Its dev mode runs `rsbuild dev` as its `dev:ui` script, with nothing of Ziggy's in `rsbuild.config.ts`, which is all an app on any bundler needs for Ziggy's dev host to front its dev server. Everything below is the example's description, which holds for it too. See [Ziggy architecture](https://github.com/ashleydavis/ziggy/blob/main/docs/architecture.md) for how the parts fit.
 
 ## What it shows
 
@@ -17,13 +17,13 @@ The Ziggy template built with Rsbuild instead of Vite, in a folder of its own, t
 
 ## Where things are
 
-Everything here is the app's own. Ziggy, the package it is built on, is the checkout in `../ziggy`, beside this repository.
+Everything here is the app's own. Ziggy, the package it is built on, comes from a version tag of [Ziggy's repository](https://github.com/ashleydavis/ziggy), the same tag in every place below.
 
-- `build.zig` and `build.zig.zon`: the app's Zig build. It takes Ziggy as the dependency `ziggy` by the path `../ziggy`, and builds the core (`ziggy-example-rsbuild-core`), the Linux and Windows native apps (`ziggy-example-rsbuild-linux`, `ziggy-example-rsbuild-windows`), dev mode (`ziggy-example-rsbuild-dev`) and the core's unit tests (`test`) with Ziggy's build functions.
-- `package.json`: takes the UI's types from Ziggy as `ziggy-ui`, by the path `../ziggy/packages/ziggy/ui`.
-- `ui/`: the UI. `ui/index.html` is the UI and `ui/src/lib` holds the plain functions that have unit tests. `rsbuild.config.ts` is its build, which writes `dist` with relative paths and a classic deferred script so it loads from an address of the app's own in every web view, and configures its dev server (the `dev:ui` script). `dist` is embedded in the app's own code on every platform (the Linux and Windows executables, and the core library that the MacOS, iOS and Android apps contain), so no platform has a folder of UI files (see the [architecture guide](../ziggy/docs/architecture.md#the-bundled-ui)).
+- `build.zig` and `build.zig.zon`: the app's Zig build. It takes Ziggy as the dependency `ziggy` by the URL of a version tag and its hash, and builds the core (`ziggy-example-rsbuild-core`), the Linux and Windows native apps (`ziggy-example-rsbuild-linux`, `ziggy-example-rsbuild-windows`), dev mode (`ziggy-example-rsbuild-dev`) and the core's unit tests (`test`) with Ziggy's build functions.
+- `package.json`: takes the UI's types from Ziggy as `ziggy-ui`, by the git URL of the same tag.
+- `ui/`: the UI. `ui/index.html` is the UI and `ui/src/lib` holds the plain functions that have unit tests. `rsbuild.config.ts` is its build, which writes `dist` with relative paths and a classic deferred script so it loads from an address of the app's own in every web view, and configures its dev server (the `dev:ui` script). `dist` is embedded in the app's own code on every platform (the Linux and Windows executables, and the core library that the MacOS, iOS and Android apps contain), so no platform has a folder of UI files (see the [architecture guide](https://github.com/ashleydavis/ziggy/blob/main/docs/architecture.md#the-bundled-ui)).
 - `core/`: the app's Zig library, which adds its channel handlers and task handlers to Ziggy's core.
-- `shells/<platform>/`: the app's native project for each platform: its name, window, icon and the app's core and UI packaged together. Each one builds on Ziggy's part for that platform in `../ziggy/packages/ziggy/native/<platform>`: the Linux and Windows native apps through the Zig build, the Xcode projects through a local Swift package and the Android project through an included Gradle build.
+- `shells/<platform>/`: the app's native project for each platform: its name, window, icon and the app's core and UI packaged together. Each one builds on Ziggy's part for that platform in `packages/ziggy/native/<platform>` of Ziggy's repository: the Linux and Windows native apps through the Zig build, the Xcode projects through the Swift package at the root of Ziggy's repository and the Android project through a Gradle source dependency on Ziggy's repository.
 - `scripts`: the build, run, packaging and setup scripts, and the shell libraries the scripts and smoke tests share (`scripts/lib`), each with a markdown file beside it.
 - `smoke-tests`: the smoke test scenarios and a library for each platform. See `smoke-tests/run.md`.
 
@@ -34,7 +34,7 @@ From the root of this repository, `<platform>` being `linux`, `windows`, `macos`
 | Command | What it does |
 |---|---|
 | `bun run setup` | One time per machine: the platform toolchains. |
-| `bun run dev` | Runs the app in dev mode: Rsbuild (the `dev:ui` script) serves the UI, the dev host runs the core in front of it, rebuilt as its Zig files change, and the default browser opens the dev host, with live reload. See the [dev host's README](../ziggy/packages/ziggy/dev/README.md). |
+| `bun run dev` | Runs the app in dev mode: Rsbuild (the `dev:ui` script) serves the UI, the dev host runs the core in front of it, rebuilt as its Zig files change, and the default browser opens the dev host, with live reload. See the [dev host's README](https://github.com/ashleydavis/ziggy/blob/main/packages/ziggy/dev/README.md). |
 | `bun run build:<platform>` | Builds the UI and the app. |
 | `bun run run:<platform>` | Builds the app and launches it (an emulator, simulator or device for a phone). |
 | `bun run open:<platform>` | Syncs, then opens the native project in its editor. |
@@ -67,8 +67,8 @@ The smoke tests drive the real app through the test hooks listed in "Test hooks"
 - **The UI**: the app's HTML, CSS and JavaScript/TypeScript, which runs in the system web view. The native menus and file dialogs are not part of it.
 - **The core**: the app's Zig code together with Ziggy's core library. It is the same on every platform, handles messages from the UI, runs tasks and never touches a window.
 - **The native app**: the part of the app written separately for each platform. It opens the window, hosts the system web view and draws the menus and file dialogs. It also passes messages between the UI and the core. It lives in `shells/`.
-- See [Ziggy's glossary](../ziggy/README.md#glossary) for the full list.
+- See [Ziggy's glossary](https://github.com/ashleydavis/ziggy/blob/main/README.md#glossary) for the full list.
 
 ## CI
 
-`.github/workflows/release.yml` runs on every push. It clones Ziggy beside the app, as `../ziggy`, then builds and cross-builds the Zig code, runs the unit tests and the smoke tests on every platform, packages the app for every platform and publishes the packages.
+`.github/workflows/release.yml` runs on every push. It builds and cross-builds the Zig code, runs the unit tests and the smoke tests on every platform, packages the app for every platform and publishes the packages.

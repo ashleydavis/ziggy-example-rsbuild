@@ -1,6 +1,6 @@
 # Ziggy Rsbuild example, MacOS native app
 
-An AppKit app: a window holding Ziggy's `WKWebView`, and a main menu with Quit. All the Ziggy behaviour is in the `ZiggyNativeMacOS` Swift package (`../ziggy/packages/ziggy/native/macos`), which the project references as a local package. The window accepts `-geometry=WxH` (the position is ignored).
+An AppKit app: a window holding Ziggy's `WKWebView`, and a main menu with Quit. All the Ziggy behaviour is in the `ZiggyNativeMacOS` Swift package (`packages/ziggy/native/macos` in Ziggy's repository), which the project takes from the `Package.swift` at the root of Ziggy's repository, at a version tag. The window accepts `-geometry=WxH` (the position is ignored).
 
 ## Web view API used
 

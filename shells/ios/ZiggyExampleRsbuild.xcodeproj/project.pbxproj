@@ -17,7 +17,6 @@
 		A20000000000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A20000000000000000000003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20000000000000000000005 /* ZiggyExampleRsbuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZiggyExampleRsbuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A20000000000000000000006 /* ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios; path = "../../../ziggy/packages/ziggy/native/ios"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +36,6 @@
 			children = (
 				A40000000000000000000002 /* ZiggyExampleRsbuild */,
 				A40000000000000000000003 /* Resources */,
-				A20000000000000000000006 /* ios */,
 				A40000000000000000000004 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +106,9 @@
 				en,
 			);
 			mainGroup = A40000000000000000000001;
+			packageReferences = (
+				AB0000000000000000000001 /* XCRemoteSwiftPackageReference "ziggy" */,
+			);
 			productRefGroup = A40000000000000000000004 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,9 +256,21 @@
 /* End XCConfigurationList section */
 
 
+/* Begin XCRemoteSwiftPackageReference section */
+		AB0000000000000000000001 /* XCRemoteSwiftPackageReference "ziggy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleydavis/ziggy";
+			requirement = {
+				kind = exactVersion;
+				version = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		A60000000000000000000001 /* ZiggyNativeIOS */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = AB0000000000000000000001 /* XCRemoteSwiftPackageReference "ziggy" */;
 			productName = ZiggyNativeIOS;
 		};
 /* End XCSwiftPackageProductDependency section */

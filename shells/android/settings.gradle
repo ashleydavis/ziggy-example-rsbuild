@@ -1,11 +1,12 @@
-// The Ziggy Rsbuild example's Android project: the app, and Ziggy's Android shell, which is a Gradle build of its own that this one
-// includes. Gradle builds the shell from the Ziggy checkout and puts it in place of the dependency `dev.ziggy:ziggy-native-android`
-// that app/build.gradle declares. See the guide to integrating Ziggy for the lines that take the shell from a version tag of Ziggy's
-// repository instead.
+// The Ziggy Rsbuild example's Android project: the app, which takes Ziggy's Android native app from Ziggy's repository on GitHub. Gradle checks
+// the repository out at the version tag that the dependency `dev.ziggy:ziggy-native-android` in app/build.gradle names, and
+// builds the native app from it.
 rootProject.name = 'ziggy-example-rsbuild-android'
 
 include ':app'
-includeBuild('../../../ziggy/packages/ziggy/native/android') {
-    // Named so its tasks are :ziggy-native-android:<task>, not :android:<task> after its directory.
-    name = 'ziggy-native-android'
+sourceControl {
+    gitRepository(uri('https://github.com/ashleydavis/ziggy.git')) {
+        producesModule('dev.ziggy:ziggy-native-android')
+        rootDir = 'packages/ziggy/native/android'
+    }
 }

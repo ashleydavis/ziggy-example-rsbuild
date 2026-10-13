@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-The Ziggy Rsbuild example is an app made from the Ziggy template and built on Ziggy, to prove that an app outside Ziggy's repository can be built on Ziggy as a package. It takes Ziggy by local path from a checkout of it beside this repository (`../ziggy`) and holds no Ziggy source.
+The Ziggy Rsbuild example is an app made from the Ziggy template and built on Ziggy, to prove that an app outside Ziggy's repository can be built on Ziggy as a package. It takes Ziggy from a version tag of Ziggy's repository on GitHub and holds no Ziggy source.
 
-"The UI", "the core" and "the native app" mean what the [Glossary](README.md#glossary) says. [Ziggy's glossary](../ziggy/README.md#glossary) has the full list. Use those terms.
+"The UI", "the core" and "the native app" mean what the [Glossary](README.md#glossary) says. [Ziggy's glossary](https://github.com/ashleydavis/ziggy/blob/main/README.md#glossary) has the full list. Use those terms.
 
 - `ui/`: the UI. `ui/src/lib` holds its plain functions and `ui/src/test` their unit tests.
 - `core/`: the app's Zig code, which adds its channel handlers and task handlers to Ziggy's core. `core/src/test` holds its unit tests.
@@ -20,7 +20,7 @@ The app is developed on Linux and delivered and tested on Linux, Windows, macOS,
 
 ## Ziggy
 
-- Ziggy's code lives in `../ziggy`. This repository takes it by path in `build.zig.zon` (the `ziggy` dependency), `package.json` (`ziggy-ui`), the Xcode projects in `shells/macos` and `shells/ios` and `shells/android/settings.gradle`.
+- Ziggy's code lives in its own repository, https://github.com/ashleydavis/ziggy. This repository pins it to a version tag in `build.zig.zon` (the `ziggy` dependency), `package.json` (`ziggy-ui`), the Xcode projects in `shells/macos` and `shells/ios` and `shells/android/app/build.gradle`, all to the same tag. A move to a new version of Ziggy changes every one of them together.
 - Never edit Ziggy's code from this repository. If a change needs one in Ziggy, stop and say what and why.
 
 ## Rules
@@ -117,7 +117,6 @@ Run from the root of this repository. Each platform's commands run on that platf
 - `bun run test:zig`: the core's unit tests.
 - `bun run test:zig:android`: the core's unit tests on an Android emulator or device.
 - `bun run test:zig:ios`: the core's unit tests on a booted iOS simulator.
-- `bun run test:android-shell`: the JUnit tests of Ziggy's Android native app, on this machine's JVM through this app's Gradle project. No emulator or device needed.
 
 ### Smoke tests
 - `bun run test:smoke`: the smoke tests on the host operating system. `bun run test:smoke -- <number|name>` runs one scenario.
@@ -144,12 +143,12 @@ Run from the root of this repository. Each platform's commands run on that platf
 - [Shared shell libraries](scripts/lib/): [process-control.md](scripts/lib/process-control.md), [test-lib.md](scripts/lib/test-lib.md), [test-timeout.md](scripts/lib/test-timeout.md), [android-env.md](scripts/lib/android-env.md).
 - Each script in `scripts/` has a markdown file beside it.
 - The native apps: [Android](shells/android/README.md), [iOS](shells/ios/README.md), [macOS](shells/macos/README.md), [Windows](shells/windows/README.md).
-- [Ziggy](../ziggy/README.md): what Ziggy is, and its glossary.
-- [Ziggy architecture](../ziggy/docs/architecture.md): the parts, the message protocol, the test hooks and how to add a channel, a task type or a native host callback.
-- [Building your app](../ziggy/docs/building-your-app.md): starting an app from the Ziggy template.
-- [Integrating Ziggy](../ziggy/docs/integrating-ziggy.md): how each kind of project takes Ziggy.
-- [Distributing your app](../ziggy/docs/distributing-your-app.md): packaging, signing and getting builds to testers.
-- [Releasing Ziggy](../ziggy/docs/releasing-ziggy.md): how Ziggy's release workflow and version tags work.
+- [Ziggy](https://github.com/ashleydavis/ziggy/blob/main/README.md): what Ziggy is, and its glossary.
+- [Ziggy architecture](https://github.com/ashleydavis/ziggy/blob/main/docs/architecture.md): the parts, the message protocol, the test hooks and how to add a channel, a task type or a native host callback.
+- [Building your app](https://github.com/ashleydavis/ziggy/blob/main/docs/building-your-app.md): starting an app from the Ziggy template.
+- [Integrating Ziggy](https://github.com/ashleydavis/ziggy/blob/main/docs/integrating-ziggy.md): how each kind of project takes Ziggy.
+- [Distributing your app](https://github.com/ashleydavis/ziggy/blob/main/docs/distributing-your-app.md): packaging, signing and getting builds to testers.
+- [Releasing Ziggy](https://github.com/ashleydavis/ziggy/blob/main/docs/releasing-ziggy.md): how Ziggy's release workflow and version tags work.
 
 ## Code style
 

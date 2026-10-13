@@ -30,11 +30,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # The app uses Ziggy from `../ziggy`, as it does on a developer's machine.
-      - name: Clone Ziggy beside the app
-        shell: bash
-        run: git clone --depth 1 https://github.com/ashleydavis/ziggy.git ../ziggy
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -125,11 +120,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # The app uses Ziggy from `../ziggy`, as it does on a developer's machine.
-      - name: Clone Ziggy beside the app
-        shell: bash
-        run: git clone --depth 1 https://github.com/ashleydavis/ziggy.git ../ziggy
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -207,11 +197,6 @@ jobs:
         with:
           run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "ndk;25.1.8937393" > /dev/null
 
-      - name: Run the Android shell's JUnit tests (Android)
-        if: matrix.platform == 'android'
-        shell: bash
-        run: bun run test:android-shell
-
       - name: Enable KVM (Android)
         if: matrix.platform == 'android'
         run: |
@@ -276,11 +261,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      # The app uses Ziggy from `../ziggy`, as it does on a developer's machine.
-      - name: Clone Ziggy beside the app
-        shell: bash
-        run: git clone --depth 1 https://github.com/ashleydavis/ziggy.git ../ziggy
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -418,11 +398,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      # The app uses Ziggy from `../ziggy`, as it does on a developer's machine.
-      - name: Clone Ziggy beside the app
-        shell: bash
-        run: git clone --depth 1 https://github.com/ashleydavis/ziggy.git ../ziggy
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2

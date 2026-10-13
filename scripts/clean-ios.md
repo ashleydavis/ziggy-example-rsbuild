@@ -1,0 +1,10 @@
+# clean-ios
+
+Runs `xcodebuild clean` for the Debug and Release configurations and removes the synced `lib/libziggy_example_rsbuild.a` and `include/ziggy.h`, and the files of the packages in `out/ios`, one at a time.
+
+Run it on a Mac: `bash scripts/clean-ios.sh`.
+
+## Arguments
+
+- `--native-dir <dir>`: default: `shells/ios/zig-out`.
+- `--build-dir <dir>`: default: `shells/ios/zig-out/xcode`.

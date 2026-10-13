@@ -1,0 +1,19 @@
+.{
+    .name = .ziggy_example_rsbuild,
+    .fingerprint = 0xf47e8c1e0dc25063,
+    .version = "1.0.0",
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        // Ziggy, from a checkout of it beside this app. An app can point at a version
+        // tag of Ziggy's repository by URL and hash instead (see the guide to integrating Ziggy).
+        .ziggy = .{
+            .path = "../ziggy",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "core",
+        "shells",
+    },
+}

@@ -27,7 +27,7 @@ BASE_NAME="ziggy-example-rsbuild-$VERSION-linux-$ARCHITECTURE"
 
 (cd "$EXAMPLE_DIR" && bun run bundle:ui)
 STAGE_DIR="$(mktemp -d "${TMPDIR:-/tmp}/ziggy-example-rsbuild-package-XXXXXX")"
-(cd "$EXAMPLE_DIR" && zig build ziggy-example-rsbuild-linux -Doptimize=ReleaseSafe -p "$STAGE_DIR/prefix")
+(cd "$EXAMPLE_DIR" && zig build ziggy-example-rsbuild-linux -Doptimize=ReleaseSafe -Dstrip=true -p "$STAGE_DIR/prefix")
 mkdir -p "$OUTPUT_DIR"
 
 # The zip holds the executable, which has the UI embedded, in one folder.

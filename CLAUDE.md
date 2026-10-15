@@ -4,19 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-The Ziggy Rsbuild example is an app made from the Ziggy template and built on Ziggy, to prove that an app outside Ziggy's repository can be built on Ziggy as a package. It takes Ziggy from a version tag of Ziggy's repository on GitHub and holds no Ziggy source.
+The Ziggy Rsbuild example is an example app built on Ziggy, with its UI built by Rsbuild. It is a copy of the Ziggy template, renamed, with Rsbuild in place of Vite. It takes Ziggy from a version tag of Ziggy's repository on GitHub and holds no Ziggy source.
 
-"The UI", "the core" and "the native app" mean what the [Glossary](README.md#glossary) says. [Ziggy's glossary](https://github.com/ashleydavis/ziggy/blob/main/README.md#glossary) has the full list. Use those terms.
+"The UI", "the backend" and "the native app" mean what [Ziggy's glossary](https://github.com/ashleydavis/ziggy/blob/main/docs/glossary.md) says. Use those terms.
 
 - `ui/`: the UI. `ui/src/lib` holds its plain functions and `ui/src/test` their unit tests.
-- `core/`: the app's Zig code, which adds its channel handlers and task handlers to Ziggy's core. `core/src/test` holds its unit tests.
+- `backend/`: the app's Zig code, which adds its channel handlers and task handlers to Ziggy's core library. `backend/src/test` holds its unit tests.
 - `shells/<platform>/`: the native app for each platform.
-- `scripts/`: the scripts that build, run, package and set up the app, with the shell libraries the scripts and smoke tests share (`scripts/lib`).
-- `smoke-tests/`: the smoke test scenarios and a library for each platform.
+- `scripts/`: the scripts that build, run, package and set up the app, with the shell libraries they share (`scripts/lib`).
+- `smoke-tests/`: the smoke tests, with a library for each platform.
 
 ## Platforms
 
-The app is developed on Linux and delivered and tested on Linux, Windows, macOS, Android and iOS. Every test and smoke test must work on each platform it runs on. On Windows the scripts run under Git Bash.
+The app is developed on Linux and delivered and tested on Linux, Windows, macOS, Android and iOS. Every test must work on each platform it runs on. On Windows the scripts run under Git Bash.
 
 ## Ziggy
 
@@ -67,17 +67,15 @@ The app is developed on Linux and delivered and tested on Linux, Windows, macOS,
 
 - NEVER WAIT FOR ANOTHER RUN'S TESTS TO FINISH BEFORE RUNNING YOUR OWN. Start the run you need when you need it. Do not watch for other runs, poll for them or treat another checkout's activity as a reason to hold off.
 - EVERY TEST MUST SURVIVE RUNNING BESIDE ANOTHER COPY OF ITSELF AND BESIDE EVERY OTHER SUITE, INCLUDING ONES STARTED FROM ANOTHER CHECKOUT OF THIS APP, OF ZIGGY OR OF ANY OTHER PROJECT ON THE MACHINE. A test that only works when it is the only thing running is broken.
-  - Nothing may claim a machine-wide resource by a fixed name: no hardcoded port, no fixed path under `/tmp` or anywhere else, no fixed lock path and no fixed device. Allocate a free port, and get a test's directory from `ziggy_test_temp_dir` in `scripts/lib/test-lib.sh` rather than naming one yourself.
-  - EVERY PROCESS A TEST SUITE STARTS MUST HAVE ITS PID RECORDED AT THE MOMENT IT IS STARTED. Start it with `launch_in_process_group` from `scripts/lib/process-control.sh`, which records it in the file `ZIGGY_LAUNCHED_GROUPS` names, or start it in the background, keep `$!` and `wait` on it. Never run a long-lived helper in the foreground. Stop processes with `kill_process_tree` or `kill_process_group`, not `kill`, because the process holding the port or the socket is often a child of the one you started.
+  - Nothing may claim a machine-wide resource by a fixed name: no hardcoded port, no fixed path under `/tmp` or anywhere else, no fixed lock path and no fixed device. Allocate a free port, and give each test a temporary directory of its own rather than naming one yourself.
   - NEVER kill a process by matching its command line. `pkill -f`, `pkill`, `killall` and anything else that selects by name will kill the identical process belonging to another checkout's run. Kill the pids you started and their descendants.
   - Interference is not flakiness and must never be dismissed as it. A suite that passes alone and fails in company contends on something shared: find it and remove it.
 
 ## Android emulators
 
-- The Android smoke tests (`test:smoke:and`) and `test:zig:android` use the devices named in `ZIGGY_ANDROID_DEVICES` (adb serials, space separated), else any attached emulator or device, whichever project started it. On this machine those are usually the emulators of Photosphere's emulator pool, which is started, stopped and repaired from the Photosphere repository, not from this one. A run claims each device under Ziggy's per-device lock (`ziggy_android_device_lock_path` in `scripts/android-common.sh`), so two Ziggy runs never install over each other.
+- `run:android` and the Android smoke tests (`test:smoke:and`) use the devices named in `ZIGGY_ANDROID_DEVICES` (adb serials, space separated), else any attached emulator or device, whichever project started it. A run claims each device under Ziggy's per-device lock (`ziggy_android_device_lock_path` in `scripts/android-common.sh`), so two Ziggy runs never install over each other.
 - Never assume whether an emulator is attached. Run `adb devices` at the point you need the answer, never from a reading taken earlier: the human starts and stops emulators without saying so. If the check disagrees with what you expected, the check is right.
 - Never start, stop, restart or repair an emulator, never create or remove a tap or a bridge and never run sudo. If an emulator is broken, report it and leave it.
-- When the human asks what went wrong with the pool earlier, read the pool monitor's logs before asking anything: `/tmp/photosphere-emulator-pool-monitor.log` and `/tmp/photosphere-emulator-pool-monitor-repairs.log`, each with one previous generation as `<name>.1`.
 
 ## Git
 
@@ -88,7 +86,7 @@ The app is developed on Linux and delivered and tested on Linux, Windows, macOS,
 
 ## Languages and scripts
 
-- THIS REPOSITORY USES TYPESCRIPT, ZIG AND SHELL SCRIPT. NOTHING ELSE. The UI is TypeScript. The core and the Linux and Windows native apps are Zig. The scripts and smoke tests are shell. Swift (the macOS and iOS native apps) and Java (the Android native app) are an exception, because those platforms require them, and are no licence to add more native code than the platform forces. `python3`, perl, Ruby, Go and friends are banned outright, including as an undeclared dependency. The pinned tools are in `mise.toml`.
+- THIS REPOSITORY USES TYPESCRIPT, ZIG AND SHELL SCRIPT. NOTHING ELSE. The UI is TypeScript. The backend and the Linux and Windows native apps are Zig. The scripts are shell. Swift (the macOS and iOS native apps) and Java (the Android native app) are an exception, because those platforms require them, and are no licence to add more native code than the platform forces. `python3`, perl, Ruby, Go and friends are banned outright, including as an undeclared dependency. The pinned tools are in `mise.toml`.
 - A SHELL SCRIPT CONTAINS SHELL. Do not embed another language inside one, in any form: not `python3 -c "..."`, not `bun -e "..."`, not `node -e`, not a heredoc feeding an interpreter, not an awk program doing the work of a script. This holds however short the snippet is.
 - When a shell script needs something that looks beyond shell, find the shell answer first: `stat`, `cmp`, `uuidgen`, `od`, `jq`. Assume there is one until you have tried it and watched it fail. Only when there is no shell answer does it become a TypeScript helper: a `.ts` file under `scripts/`, with a comment block saying what it is for and a documented argument list. See `scripts/ios-device.ts`.
 - Shell scripts always use a `.sh` extension.
@@ -100,55 +98,6 @@ The app is developed on Linux and delivered and tested on Linux, Windows, macOS,
 ## Mobile environment
 
 - The local iOS development environment is fixed: macOS 12.7.6 and Xcode 14.2. Never bump a tool or framework version that would require a newer Xcode or macOS. When mobile code needs a newer API, prefer an availability guard or a compatible approach. If a version bump seems unavoidable, stop and ask first.
-
-## Commands
-
-Run from the root of this repository. Each platform's commands run on that platform (macOS and iOS on a Mac, Windows under Git Bash).
-
-### Setup
-- `bun install`: install the packages. Do this before running any other script.
-- `mise install`: install the pinned tools (`mise.toml`).
-- `bun run setup`: one-time setup for the platforms this machine builds: iOS and Android on a Mac, Android on Linux, Windows under Git Bash. See `scripts/setup.md`.
-
-### Compile and unit tests
-- `bun run compile` (alias `bun run c`): type-check the TypeScript.
-- `bun run compile:zig`: build the UI and the core for this machine, then cross-build the core for every other platform and check the Windows native app compiles. See `scripts/zig-packages.md`.
-- `bun run test` (alias `bun run t`): the UI's unit tests (Jest).
-- `bun run test:zig`: the core's unit tests.
-- `bun run test:zig:android`: the core's unit tests on an Android emulator or device.
-- `bun run test:zig:ios`: the core's unit tests on a booted iOS simulator.
-
-### Smoke tests
-- `bun run test:smoke`: the smoke tests on the host operating system. `bun run test:smoke -- <number|name>` runs one scenario.
-- `bun run test:smoke:and`: the smoke tests on an attached Android emulator or device.
-- `bun run test:smoke:ios`: the smoke tests on a connected iPhone or iPad when there is one, otherwise the iOS simulator.
-- `bun run dev`: run the app in dev mode: Rsbuild (the `dev:ui` script) serves the UI, the dev host runs the core in front of it, rebuilt as its Zig files change, and the default browser opens the dev host, with live reload. `zig build ziggy-example-rsbuild-dev -- --no-open` does the same without opening the browser.
-
-### Building, running and packaging
-`<platform>` is `linux`, `windows`, `macos`, `android` or `ios`.
-- `bun run bundle:ui`: build the UI into `dist`, which every platform embeds.
-- `bun run sync:<platform>`: build the UI and the core and put what the platform's native project needs where it expects it.
-- `bun run build:<platform>`: build the UI and the app.
-- `bun run run:<platform>`: build the app and launch it (an emulator, simulator or device for a phone).
-- `bun run open:<platform>`: sync, then open the native project in its editor.
-- `bun run package:<platform>`: build the release app, without the test hooks, and write unsigned packages into `out/<platform>`.
-- `bun run distribute:android`: build the Android app and upload it to Firebase App Distribution. See `scripts/distribute-android.md`.
-- `bun run clean:<platform>`: delete the platform's build output.
-- `bun run clean`: run the clean for every platform this machine can clean.
-
-## Guides
-
-- [README](README.md): what the app shows, where things are, what each platform needs, test hooks and the glossary.
-- [Smoke tests](smoke-tests/run.md): the runner and every scenario. [run-desktop.md](smoke-tests/run-desktop.md) for the host operating system.
-- [Shared shell libraries](scripts/lib/): [process-control.md](scripts/lib/process-control.md), [test-lib.md](scripts/lib/test-lib.md), [test-timeout.md](scripts/lib/test-timeout.md), [android-env.md](scripts/lib/android-env.md).
-- Each script in `scripts/` has a markdown file beside it.
-- The native apps: [Android](shells/android/README.md), [iOS](shells/ios/README.md), [macOS](shells/macos/README.md), [Windows](shells/windows/README.md).
-- [Ziggy](https://github.com/ashleydavis/ziggy/blob/main/README.md): what Ziggy is, and its glossary.
-- [Ziggy architecture](https://github.com/ashleydavis/ziggy/blob/main/docs/architecture.md): the parts, the message protocol, the test hooks and how to add a channel, a task type or a native host callback.
-- [Building your app](https://github.com/ashleydavis/ziggy/blob/main/docs/building-your-app.md): starting an app from the Ziggy template.
-- [Integrating Ziggy](https://github.com/ashleydavis/ziggy/blob/main/docs/integrating-ziggy.md): how each kind of project takes Ziggy.
-- [Distributing your app](https://github.com/ashleydavis/ziggy/blob/main/docs/distributing-your-app.md): packaging, signing and getting builds to testers.
-- [Releasing Ziggy](https://github.com/ashleydavis/ziggy/blob/main/docs/releasing-ziggy.md): how Ziggy's release workflow and version tags work.
 
 ## Code style
 
@@ -168,7 +117,7 @@ Run from the root of this repository. Each platform's commands run on that platf
 - Never put multiple statements on one line.
 - Never write an object literal on one line. Open the brace, put each property and each spread on its own line ending in a comma and close the brace on its own line. The only exception is an empty `{}`.
 - Put `else` and `catch` blocks on a new line.
-- UI unit tests go in `ui/src/test` and the core's in `core/src/test`.
+- UI unit tests go in `ui/src/test` and the backend's in `backend/src/test`.
 - Use `test(` not `it(` in Jest test files.
 - Logic in the UI worth testing goes in a plain function under `ui/src/lib` with a unit test. Do not extract trivial logic only to gain a test.
 - Do not invent a new file to "get a test on it". When logic belongs to something that already exists, put it there. When it belongs nowhere and is small enough to read in one go, leave it where it is with a comment saying why. The test that exercises the feature covers it.
@@ -198,3 +147,4 @@ Run from the root of this repository. Each platform's commands run on that platf
 
 - No serial comma. Write "Linux, Windows and macOS", never "Linux, Windows, and macOS". Where a list reads ambiguously without it, rephrase the sentence.
 - Never use em dashes. Use a period, comma, colon or parentheses instead.
+- Never write "by hand". Say what the reader does instead, or what it is done without: "without the command", "yourself", "from the Actions tab".

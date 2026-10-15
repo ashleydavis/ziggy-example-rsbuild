@@ -2,6 +2,6 @@
 
 One-time setup for building the example for Android. It runs the repository's [install-android-sdk.sh](install-android-sdk.md) `--install` (which installs the SDK packages and the pinned NDK) and then checks the JDK 17, SDK and NDK are where the build looks for them. It installs nothing of its own.
 
-It is run on Linux and MacOS by `bun run --filter=ziggy-example-rsbuild setup` from the repository root, through [setup.sh](setup.md). No arguments.
+It is run on Linux and MacOS by `bun run setup`, through [setup.sh](setup.md). No arguments.
 
-Needs `zig`, `bun`, `jq` and `unzip` on the PATH.
+Needs `zig`, `bun`, `jq`, `unzip` and `curl` on the PATH.

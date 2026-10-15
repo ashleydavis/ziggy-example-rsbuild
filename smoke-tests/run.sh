@@ -8,9 +8,9 @@ set -u
 SMOKE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 APP_DIR="$(cd "$SMOKE_DIR/.." && pwd)"
 
-source "$APP_DIR/scripts/lib/test-lib.sh"
-source "$APP_DIR/scripts/lib/test-timeout.sh"
-source "$APP_DIR/scripts/lib/process-control.sh"
+source "$SMOKE_DIR/lib/test-lib.sh"
+source "$SMOKE_DIR/lib/test-timeout.sh"
+source "$SMOKE_DIR/lib/process-control.sh"
 
 
 PLATFORM="${1:-}"
@@ -20,7 +20,7 @@ case "$PLATFORM" in
     linux|windows|macos|android|ios)
         ;;
     *)
-        echo "Usage: run.sh <linux|windows|macos|android|ios> [scenario number or name]" >&2
+        echo "Usage: run.sh <linux|windows|macos|android|ios> [scenario name]" >&2
         exit 2
         ;;
 esac
@@ -59,20 +59,14 @@ if ! ziggy_platform_prepare "$RUN_DIR"; then
     exit 1
 fi
 #
-# Prints the scenario directories this platform runs, one per line, in numeric order: the ones every platform runs and, on a
-# desktop platform, the ones about desktop features such as the menu.
+# Prints the scenario directories, one per line, in name order: every folder here that holds a test.sh.
 #
 list_scenarios() {
-    {
-        ls -d "$SMOKE_DIR"/[0-9]*
-        case "$PLATFORM" in
-            linux|windows|macos)
-                ls -d "$SMOKE_DIR"/desktop-only/[0-9]*
-                ;;
-        esac
-    } | while IFS= read -r directory; do
-        printf '%s\t%s\n' "$(basename "$directory")" "$directory"
-    done | sort -V | cut -f2
+    ls -d "$SMOKE_DIR"/*/ | sed 's#/$##' | while IFS= read -r directory; do
+        if [ -f "$directory/test.sh" ]; then
+            printf '%s\n' "$directory"
+        fi
+    done | sort
 }
 
 
@@ -100,6 +94,14 @@ while IFS= read -r scenario_dir; do
         else
             echo "FAILED: $scenario_name (exit $status). Its files are in $test_dir"
         fi
+        # A runner keeps none of the scenario's files, so the end of each log the app, its dev server and its browser wrote is
+        # printed here, where the run's own log keeps it.
+        for log_file in "$test_dir"/*.log; do
+            if [ -f "$log_file" ]; then
+                echo "--- the end of $(basename "$log_file"):"
+                tail -n 60 "$log_file"
+            fi
+        done
         failed=$((failed + 1))
         failed_names="$failed_names $scenario_name"
     fi

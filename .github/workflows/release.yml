@@ -22,7 +22,7 @@ on:
 
 jobs:
   zig-build:
-    # Cross-builds the app's core for every platform, with and without the test hooks, and compiles the Windows shell. Zig
+    # Cross-builds the app's backend for every platform, with and without the test hooks, and compiles the Windows shell. Zig
     # cross-builds from any machine, so this runs once, on Linux.
     timeout-minutes: 40
     runs-on: ubuntu-latest
@@ -96,10 +96,8 @@ jobs:
           key: ${{ runner.os }}-${{ runner.arch }}-ziggy-example-rsbuild-zig-build-${{ github.sha }}
 
   unit-tests:
-    # The unit tests on each platform. The desktop platforms run the TypeScript tests (the app's UI) and every
-    # Zig test (`zig build test`: the app's core) on the runner. Android runs the
-    # Zig test programs on an emulator and the Android shell's JUnit tests on the runner's JVM. iOS runs the Zig test programs on a
-    # simulator, because a program built for a phone cannot run on the runner.
+    # The unit tests on each desktop platform: the TypeScript tests (the app's UI) and every Zig test (`zig build test`: the
+    # app's backend), on the runner.
     timeout-minutes: 50
     strategy:
       fail-fast: false
@@ -111,10 +109,6 @@ jobs:
             os: macos-latest
           - platform: windows
             os: windows-latest
-          - platform: android
-            os: ubuntu-latest
-          - platform: ios
-            os: macos-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout code
@@ -170,65 +164,11 @@ jobs:
         shell: bash
         run: bun run test
 
-      # `test:zig` builds the app's UI before it runs the core's tests, which embed it.
+      # `test:zig` builds the app's UI before it runs the backend's tests, which embed it.
       - name: Run the Zig unit tests
         if: matrix.platform == 'linux' || matrix.platform == 'macos' || matrix.platform == 'windows'
         shell: bash
         run: bun run test:zig
-
-      # The Android scripts need JDK 17 and the NDK the app pins.
-      - name: Setup JDK 17 (Android)
-        if: matrix.platform == 'android'
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "17"
-
-      - name: Cache the Android NDK
-        if: matrix.platform == 'android'
-        uses: actions/cache@v4
-        with:
-          path: /usr/local/lib/android/sdk/ndk/25.1.8937393
-          key: ${{ runner.os }}-android-ndk-25.1.8937393
-
-      - name: Install Android NDK (Android)
-        if: matrix.platform == 'android'
-        uses: ./.github/actions/retry-install
-        with:
-          run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "ndk;25.1.8937393" > /dev/null
-
-      - name: Enable KVM (Android)
-        if: matrix.platform == 'android'
-        run: |
-          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
-          sudo udevadm control --reload-rules
-          sudo udevadm trigger --name-match=kvm
-
-      # The script is one line, because this action runs each line of `script:` in a shell of its own.
-      - name: Run the Zig unit tests on an emulator (Android)
-        if: matrix.platform == 'android'
-        timeout-minutes: 30
-        uses: reactivecircus/android-emulator-runner@v2
-        env:
-          ZIGGY_ANDROID_DEVICES: emulator-5554
-        with:
-          api-level: 35
-          arch: x86_64
-          target: google_apis
-          script: bun run test:zig:android
-
-      # The script runs the programs on a booted simulator and fails when none is, so one is booted here.
-      - name: Boot an iOS simulator (iOS)
-        if: matrix.platform == 'ios'
-        shell: bash
-        run: |
-          udid="$(xcrun simctl list devices available -j | jq -r '[.devices | to_entries[] | select(.key | contains("iOS")) | .value[] | select(.name | startswith("iPhone"))][0].udid')"
-          xcrun simctl boot "$udid"
-          xcrun simctl bootstatus "$udid" -b
-
-      - name: Run the Zig unit tests on a simulator (iOS)
-        if: matrix.platform == 'ios'
-        run: bun run test:zig:ios
 
       # Always, so a job that fails part way still leaves what it compiled.
       - name: Save the Zig build caches

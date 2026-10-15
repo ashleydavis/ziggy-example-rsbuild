@@ -9,12 +9,12 @@ bun run distribute:android
 bun run distribute:android -- --groups testers,family
 ```
 
-It needs the Firebase CLI on your PATH and signed in (`curl -sL https://firebase.tools | bash`, then `firebase login`), and the Android SDK and NDK that `bun run --filter=ziggy-example-rsbuild setup` sets up.
+It needs the Firebase CLI on your PATH and signed in (`curl -sL https://firebase.tools | bash`, then `firebase login`), and the Android SDK and NDK that `bun run setup` sets up.
 
 ## Arguments
 
 - `--groups <aliases>` names the tester group aliases to release to, comma separated, as they appear in the Firebase console. The default is `testers`. Groups belong to the whole Firebase project.
-- `--project <id>` names the Firebase project. The default is the one `FIREBASE_PROJECT` in the script names.
+- `--project <id>` names the app's Firebase project. Without it the script takes the one the `FIREBASE_PROJECT` environment variable names, and stops with an error when neither names one.
 - `--build-only` builds the APK and stops. It runs nothing against Firebase and needs no Firebase CLI.
 
 ## What it decides for you

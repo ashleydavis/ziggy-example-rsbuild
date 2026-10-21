@@ -3,9 +3,9 @@ const ziggy_build = @import("ziggy");
 
 //
 // Builds the Ziggy Rsbuild example, an app built on Ziggy the way every app is: it takes Ziggy as the dependency named "ziggy" in
-// build.zig.zon, builds its backend as a library with the `ziggy-example-rsbuild-core` step, and its Linux and Windows shells with the
+// build.zig.zon, builds its backend as a library with the `ziggy-example-rsbuild-backend` step, and its Linux and Windows shells with the
 // `ziggy-example-rsbuild-linux` and `ziggy-example-rsbuild-windows` steps. The Xcode projects and the Android project are built by the app's scripts,
-// which ask the `ziggy-example-rsbuild-core` step for the backend's library. `ziggy-example-rsbuild-dev` runs it in dev mode, with the UI in a browser, which comes
+// which run the `ziggy-example-rsbuild-backend` step to build the backend's library. `ziggy-example-rsbuild-dev` runs it in dev mode, with the UI in a browser, which comes
 // with the backend. `test` runs the unit tests of the example's backend.
 //
 pub fn build(b: *std.Build) !void {
@@ -21,10 +21,10 @@ pub fn build(b: *std.Build) !void {
     const optimize = b.option(std.builtin.OptimizeMode, "optimize", "Prioritize performance, safety, or binary size (default: ReleaseSafe)") orelse .ReleaseSafe;
 
     const ziggy = ziggy_build.dependency(b, target, optimize, test_hooks);
-    const core = try ziggy_build.addAppCore(b, ziggy, .{
+    const core = try ziggy_build.addAppBackend(b, ziggy, .{
         .name = "ziggy-example-rsbuild",
         .title = "the Ziggy Rsbuild example",
-        .root_source_file = "backend/src/index.zig",
+        .backend_source_file = "backend/src/app.zig",
         .ui_directory = "dist",
         .imports = &.{},
     }, target, optimize);
@@ -41,7 +41,7 @@ pub fn build(b: *std.Build) !void {
     // The unit tests of the example's backend, which run it with Ziggy's test hooks compiled in.
     const test_ziggy = ziggy_build.dependency(b, target, optimize, true);
     const example_for_tests = b.createModule(.{
-        .root_source_file = b.path("backend/src/handlers.zig"),
+        .root_source_file = b.path("backend/src/app.zig"),
         .target = target,
         .optimize = optimize,
         .link_libc = true,
@@ -49,14 +49,14 @@ pub fn build(b: *std.Build) !void {
     example_for_tests.addImport("ziggy-core", test_ziggy.module);
     example_for_tests.addImport("ui-files", try ziggy_build.embedUi(b, test_ziggy.module, "ziggy-core", "dist"));
     const test_step = b.step("test", "Run the unit tests of the Ziggy Rsbuild example's core");
-    const test_binary_step = b.step("test-binary-ziggy-example-rsbuild-core", "Build the unit test program of the Ziggy Rsbuild example's core and install it to test-bin without running it");
+    const test_binary_step = b.step("test-binary-ziggy-example-rsbuild-backend", "Build the unit test program of the Ziggy Rsbuild example's core and install it to test-bin without running it");
     try ziggy_build.addDirectoryTests(b, test_step, "backend", &.{
         .{
             .name = "ziggy-core",
             .module = test_ziggy.module,
         },
         .{
-            .name = "ziggy-example-rsbuild-core",
+            .name = "ziggy-example-rsbuild-backend",
             .module = example_for_tests,
         },
     }, target, optimize, test_binary_step);

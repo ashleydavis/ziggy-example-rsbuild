@@ -9,4 +9,4 @@ source "$SCRIPT_DIR/lib/apple-common.sh"
 
 apple_require_macos
 bash "$SCRIPT_DIR/build-macos.sh"
-exec "$APPLE_EXAMPLE_DIR/shells/macos/zig-out/xcode/Build/Products/Debug/ZiggyExampleRsbuild.app/Contents/MacOS/ZiggyExampleRsbuild" "$@"
+exec "$APPLE_EXAMPLE_DIR/native/macos/zig-out/xcode/Build/Products/Debug/ZiggyExampleRsbuild.app/Contents/MacOS/ZiggyExampleRsbuild" "$@"

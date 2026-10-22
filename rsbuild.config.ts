@@ -3,11 +3,11 @@ import { defineConfig } from '@rsbuild/core';
 export default defineConfig({
     source: {
         entry: {
-            index: './ui/src/main.ts',
+            index: './frontend/src/main.ts',
         },
     },
     html: {
-        template: './ui/index.html',
+        template: './frontend/index.html',
     },
     output: {
         // scripts/bundle-ui.sh builds into a directory of its own and moves the files into dist, so nothing reads dist half written.

@@ -1,6 +1,6 @@
 # Ziggy Rsbuild example
 
-An example app built on [Ziggy](https://github.com/ashleydavis/ziggy), with its frontend built by Rsbuild. It is a copy of the Ziggy template, renamed, with Rsbuild building its frontend and serving it in dev mode in place of Vite, and taking Ziggy from a released version, as [Building your app](https://github.com/ashleydavis/ziggy/blob/main/docs/user-guide/building-your-app.md) describes. Its dev mode runs `rsbuild dev` as its `dev:ui` script, with nothing of Ziggy's in `rsbuild.config.ts`, which is all an app on any bundler needs for Ziggy's dev host to front its dev server. To run it, follow Ziggy's [quick start](https://github.com/ashleydavis/ziggy/blob/main/docs/quick-start.md). See [Ziggy architecture](https://github.com/ashleydavis/ziggy/blob/main/docs/development/architecture.md) for how the parts fit, and [Ziggy's glossary](https://github.com/ashleydavis/ziggy/blob/main/docs/glossary.md) for the terms the docs use.
+An example app built on [Ziggy](https://github.com/ashleydavis/ziggy), with its frontend built by Rsbuild. It is a copy of the Ziggy template, renamed, with Rsbuild building its frontend and serving it in dev mode in place of Vite, and taking Ziggy from a released version, as [Building your app](https://github.com/ashleydavis/ziggy/blob/main/docs/user-guide/building-your-app.md) describes. Its dev mode runs `rsbuild dev` as its `dev:ui` script, with nothing of Ziggy's in `rsbuild.config.ts`, which is all an app on any bundler needs for Ziggy's dev backend to front its dev server. To run it, follow Ziggy's [quick start](https://github.com/ashleydavis/ziggy/blob/main/docs/quick-start.md). See [Ziggy architecture](https://github.com/ashleydavis/ziggy/blob/main/docs/development/architecture.md) for how the parts fit, and [Ziggy's glossary](https://github.com/ashleydavis/ziggy/blob/main/docs/glossary.md) for the terms the docs use.
 
 ## Hello world
 
@@ -8,8 +8,8 @@ The example is the smallest complete app: a hello world for each kind of code an
 
 | Kind | Code | Test |
 |---|---|---|
-| Frontend | `ui/src/lib/hello-world-ui.ts`, used by `ui/src/main.ts` | `ui/src/test/hello-world-ui.test.ts` (`bun run test`) |
-| Backend: a message handler and a task | `backend/src/lib/hello-world-backend.zig`, registered in `backend/src/app.zig` | `backend/src/test/hello-world-backend.test.zig` (`bun run test:zig`) |
+| Frontend | `frontend/src/lib/hello-world.ts`, used by `frontend/src/main.ts` | `frontend/src/test/hello-world.test.ts` (`bun run test`) |
+| Backend: a message handler and a task | `backend/src/lib/hello-world.zig`, registered in `backend/src/app.zig` | `backend/src/test/hello-world.test.zig` (`bun run test:zig`) |
 | The whole app | The app | `smoke-tests/hello-world-app/test.sh` (`bun run test:smoke`) |
 
 The page shows the backend's message response to the `hello-world` message, and a button starts the `hello-world-task` task and shows what it sends. The desktop menu is defined once in Zig (`backend/src/lib/menu.zig`) and drawn natively; a mobile device shows no menu.
@@ -20,7 +20,7 @@ Everything here is the app's own. Ziggy, the package it is built on, comes from 
 
 - `build.zig` and `build.zig.zon`: the app's Zig build. It takes Ziggy as the dependency `ziggy` by the URL of a version tag and its hash, and builds the backend (`ziggy-example-rsbuild-backend`), the Linux and Windows native apps (`ziggy-example-rsbuild-linux`, `ziggy-example-rsbuild-windows`), dev mode (`ziggy-example-rsbuild-dev`) and the backend's unit tests (`test`) with Ziggy's build functions.
 - `package.json`: takes the frontend's types from Ziggy as `ziggy`, by the git URL of the same tag.
-- `ui/`: the frontend. `ui/index.html` is the frontend and `ui/src/lib` holds the plain functions that have unit tests. `rsbuild.config.ts` is its build, which writes `dist` with relative paths and a classic deferred script so it loads from an address of the app's own in every web view, and configures its dev server (the `dev:ui` script). `dist` is embedded in the app's own code on every platform (the Linux and Windows executables, and the backend library that the MacOS, iOS and Android apps contain), so no platform has a folder of frontend files (see the [architecture guide](https://github.com/ashleydavis/ziggy/blob/main/docs/development/architecture.md#the-bundled-frontend)).
+- `frontend/`: the frontend. `frontend/index.html` is the frontend and `frontend/src/lib` holds the plain functions that have unit tests. `rsbuild.config.ts` is its build, which writes `dist` with relative paths and a classic deferred script so it loads from an address of the app's own in every web view, and configures its dev server (the `dev:ui` script). `dist` is embedded in the app's own code on every platform (the Linux and Windows executables, and the backend library that the MacOS, iOS and Android apps contain), so no platform has a folder of frontend files (see the [architecture guide](https://github.com/ashleydavis/ziggy/blob/main/docs/development/architecture.md#the-bundled-frontend)).
 - `backend/`: the app's Zig library. `backend/src/app.zig` declares the app with `ziggy.core.App`, listing each message name with its handler and each task type with its handler, and Ziggy's build exports Ziggy's C interface for it. The handlers are in `backend/src/lib`.
 - `native/<platform>/`: the app's native project for each platform: its name, window, icon and the app's backend and frontend packaged together. Each one builds on Ziggy's part for that platform in `packages/ziggy/native/<platform>` of Ziggy's repository: the Linux and Windows native apps through the Zig build, the Xcode projects through the Swift package at the root of Ziggy's repository and the Android project through a Gradle source dependency on Ziggy's repository.
 - `scripts`: the build, run, packaging and setup scripts, and the shell libraries the scripts share (`scripts/lib`), each with a markdown file beside it.
@@ -53,7 +53,7 @@ From the root of this repository, `<platform>` being `linux`, `windows`, `macos`
 | `bun run compile:zig` | Builds the frontend and the backend for this machine, then cross-builds the backend for every other platform and checks the Windows native app compiles. See `scripts/zig-packages.md`. |
 | `bun run bundle:ui` | Builds the frontend into `dist`, which every platform embeds. |
 | `bun run sync:<platform>` | Builds the frontend and the backend and puts what the platform's native project needs where it expects it. |
-| `bun run dev` | Runs the app in dev mode: Rsbuild (the `dev:ui` script) serves the frontend, the dev host runs the backend in front of it, rebuilt as its Zig files change, and the default browser opens the dev host, with live reload. See the [dev host's README](https://github.com/ashleydavis/ziggy/blob/main/packages/ziggy/dev/README.md). `zig build ziggy-example-rsbuild-dev -- --no-open` does the same without opening the browser. |
+| `bun run dev` | Runs the app in dev mode: Rsbuild (the `dev:ui` script) serves the frontend, the dev backend runs the backend in front of it, rebuilt as its Zig files change, and the default browser opens the dev backend, with live reload. See Ziggy's [Dev mode](https://github.com/ashleydavis/ziggy/blob/main/docs/user-guide/dev-mode.md) guide. `zig build ziggy-example-rsbuild-dev -- --no-open` does the same without opening the browser. |
 | `bun run build:<platform>` | Builds the frontend and the app. |
 | `bun run <platform>` | Builds the app and launches it (an emulator, simulator or device for a phone). |
 | `bun run open:<platform>` | Syncs, then opens the native project in its editor. |
@@ -79,7 +79,7 @@ From the root of this repository, `<platform>` being `linux`, `windows`, `macos`
 
 ## Test hooks
 
-The smoke tests drive the real app through the test hooks listed in "Test hooks" in the architecture guide: `backend/src/lib/ui-query.zig` tells the frontend it is in test mode, and `ui/src/lib/test-commands.ts` handles the commands the smoke tests send. They are compiled in only by the `test-hooks` build option, which the smoke test runner sets and the `package` commands never do.
+The smoke tests drive the real app through the test hooks listed in "Test hooks" in the architecture guide: `backend/src/lib/ui-query.zig` tells the frontend it is in test mode, and `frontend/src/lib/test-commands.ts` handles the commands the smoke tests send. They are compiled in only by the `test-hooks` build option, which the smoke test runner sets and the `package` commands never do.
 
 ## CI
 

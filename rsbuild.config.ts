@@ -14,7 +14,7 @@ export default defineConfig({
         distPath: {
             root: process.env.BUNDLE_UI_OUT_DIR ?? 'dist',
         },
-        // The built UI is loaded from an address of the app's own in every web view, so its files are found relative to the page.
+        // The built frontend is loaded from an address of the app's own in every web view, so its files are found relative to the page.
         assetPrefix: './',
         filenameHash: false,
         minify: false,

@@ -33,8 +33,8 @@ pub fn build(b: *std.Build) !void {
         .name = "ziggy-example-rsbuild",
         .title = "the Ziggy Rsbuild example",
         .directory = ".",
-        .linux_icon = null,
-        .windows_resource = null,
+        .linux_icon = "assets/app-icon-512.png",
+        .windows_resource = "native/windows/ziggy-example-rsbuild.rc",
     };
     try ziggy_build.addLinuxNativeApp(b, app, strip, target, optimize, ziggy, core.static_library);
     try ziggy_build.addWindowsNativeApp(b, app, compile_only, strip, target, optimize, ziggy, core.static_library);

@@ -1,0 +1,11 @@
+{
+    "name": "Ziggy Rsbuild example",
+    "prefix": "app-icon",
+    "icon": "app-icon.svg",
+    "foreground": "app-icon-foreground.svg",
+    "portrait": "splash-portrait.svg",
+    "landscape": "splash-landscape.svg",
+    "background": "#0B1B2E",
+    "macosTarget": "ZiggyExampleRsbuild",
+    "iosTarget": "ZiggyExampleRsbuild"
+}

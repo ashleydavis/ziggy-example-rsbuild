@@ -55,7 +55,7 @@ From the root of this repository, `<platform>` being `linux`, `windows`, `macos`
 | `bun run sync:<platform>` | Builds the frontend and the backend and puts what the platform's native project needs where it expects it. |
 | `bun run dev` | Runs the app in dev mode: Rsbuild (the `dev:ui` script) serves the frontend, the dev backend runs the backend in front of it, rebuilt as its Zig files change, and the default browser opens the dev backend, with live reload. See Ziggy's [Dev mode](https://github.com/ashleydavis/ziggy/blob/main/docs/user-guide/dev-mode.md) guide. `zig build ziggy-example-rsbuild-dev -- --no-open` does the same without opening the browser. |
 | `bun run build:<platform>` | Builds the frontend and the app. |
-| `bun run <platform>` | Builds the app and launches it (an emulator, simulator or device for a phone). |
+| `bun run <platform>` | Builds the app and launches it (an emulator, simulator or device for a mobile). |
 | `bun run open:<platform>` | Syncs, then opens the native project in its editor. |
 | `bun run package:<platform>` | Packages the app for distribution into `out/<platform>`. |
 | `bun run distribute:android` | Builds the Android app and uploads it to Firebase App Distribution for the tester group. See `scripts/distribute-android.md`. |

@@ -1,0 +1,45 @@
+== android-33: ~/Android/Sdk/build-tools/36.1.0/aapt2 dump resources ~/Android/Sdk/platforms/android-33/android.jar | grep -oiE 'attr/[a-zA-Z]*SplashScreen[a-zA-Z]*' | sort -u
+attr/splashScreenTheme
+attr/windowSplashScreenAnimatedIcon
+attr/windowSplashScreenAnimationDuration
+attr/windowSplashScreenBackground
+attr/windowSplashScreenBehavior
+attr/windowSplashScreenBrandingImage
+attr/windowSplashscreenContent
+attr/windowSplashScreenIconBackgroundColor
+== android-34: ~/Android/Sdk/build-tools/36.1.0/aapt2 dump resources ~/Android/Sdk/platforms/android-34/android.jar | grep -oiE 'attr/[a-zA-Z]*SplashScreen[a-zA-Z]*' | sort -u
+attr/splashScreenTheme
+attr/windowSplashScreenAnimatedIcon
+attr/windowSplashScreenAnimationDuration
+attr/windowSplashScreenBackground
+attr/windowSplashScreenBehavior
+attr/windowSplashScreenBrandingImage
+attr/windowSplashscreenContent
+attr/windowSplashScreenIconBackgroundColor
+== android-35: ~/Android/Sdk/build-tools/36.1.0/aapt2 dump resources ~/Android/Sdk/platforms/android-35/android.jar | grep -oiE 'attr/[a-zA-Z]*SplashScreen[a-zA-Z]*' | sort -u
+attr/splashScreenTheme
+attr/windowSplashScreenAnimatedIcon
+attr/windowSplashScreenAnimationDuration
+attr/windowSplashScreenBackground
+attr/windowSplashScreenBehavior
+attr/windowSplashScreenBrandingImage
+attr/windowSplashscreenContent
+attr/windowSplashScreenIconBackgroundColor
+== android-36: ~/Android/Sdk/build-tools/36.1.0/aapt2 dump resources ~/Android/Sdk/platforms/android-36/android.jar | grep -oiE 'attr/[a-zA-Z]*SplashScreen[a-zA-Z]*' | sort -u
+attr/splashScreenTheme
+attr/windowSplashScreenAnimatedIcon
+attr/windowSplashScreenAnimationDuration
+attr/windowSplashScreenBackground
+attr/windowSplashScreenBehavior
+attr/windowSplashScreenBrandingImage
+attr/windowSplashscreenContent
+attr/windowSplashScreenIconBackgroundColor
+== android-36.1: ~/Android/Sdk/build-tools/36.1.0/aapt2 dump resources ~/Android/Sdk/platforms/android-36.1/android.jar | grep -oiE 'attr/[a-zA-Z]*SplashScreen[a-zA-Z]*' | sort -u
+attr/splashScreenTheme
+attr/windowSplashScreenAnimatedIcon
+attr/windowSplashScreenAnimationDuration
+attr/windowSplashScreenBackground
+attr/windowSplashScreenBehavior
+attr/windowSplashScreenBrandingImage
+attr/windowSplashscreenContent
+attr/windowSplashScreenIconBackgroundColor

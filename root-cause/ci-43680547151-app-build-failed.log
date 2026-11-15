@@ -1,0 +1,978 @@
+app-build	UNKNOWN STEP	﻿2026-11-15T05:19:47.4355739Z Current runner version: '2.338.2'
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4392844Z ##[group]Runner Image Provisioner
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4394254Z Hosted Compute Agent
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4395334Z Version: 20261103.629
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4396446Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4397818Z Build Date: 2026-11-03T17:26:59Z
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4399022Z Worker ID: {ef4c0882-27af-48d4-bbf4-94310da08775}
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4400267Z Region: eastus
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4401627Z Cloud: Azure
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4402601Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4405154Z ##[group]Operating System
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4406246Z Ubuntu
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4407144Z 24.04.5
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4408150Z LTS
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4409083Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4410106Z ##[group]Runner Image
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4411491Z Image: ubuntu-24.04
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4412617Z Version: 20261111.370.1
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4414760Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261111.370/images/ubuntu/Ubuntu2404-Readme.md
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4417588Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261111.370
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4419421Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4421747Z ##[group]GITHUB_TOKEN Permissions
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4425496Z Contents: read
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4426595Z Metadata: read
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4427522Z Packages: read
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4428441Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4432040Z Secret source: Actions
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4433793Z Cache mode: write
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.4435015Z Prepare workflow directory
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.5028388Z Prepare all required actions
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.5091200Z Getting action download info
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.7236992Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.8592935Z Download action repository 'oven-sh/setup-bun@v2' (SHA:0c5077e51419868618aeaa5fe8019c62421857d6)
+app-build	UNKNOWN STEP	2026-11-15T05:19:47.9874938Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.0751702Z Download action repository 'jdx/mise-action@v2' (SHA:c37c93293d6b742fc901e1406b8f764f6fb19dac)
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.2052570Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.3035211Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.6716807Z Complete job name: app-build
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7885281Z ##[group]Run actions/checkout@v4
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7886522Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7887328Z   repository: ashleydavis/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7895244Z   token: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7895948Z   ssh-strict: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7896642Z   ssh-user: git
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7897358Z   persist-credentials: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7898165Z   clean: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7898884Z   sparse-checkout-cone-mode: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7899737Z   fetch-depth: 1
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7900597Z   fetch-tags: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7901336Z   show-progress: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7902081Z   lfs: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7902743Z   submodules: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7903469Z   set-safe-directory: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7904291Z   allow-unsafe-pr-checkout: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7905421Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7906076Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7906814Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7907567Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7908429Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:19:48.7909250Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1123759Z Syncing repository: ashleydavis/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1126598Z ##[group]Getting Git version info
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1128015Z Working directory is '/home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild'
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1130968Z [command]/usr/bin/git version
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1244048Z git version 2.56.1
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1268345Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1285067Z Temporarily overriding HOME='/home/runner/work/_temp/4ad80f52-d695-4092-b3ba-57639aaa1445' before making global git config changes
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1289299Z Adding repository directory to the temporary git global config as a safe directory
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1293471Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1362071Z Deleting the contents of '/home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild'
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1372272Z ##[group]Initializing the repository
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1377588Z [command]/usr/bin/git init /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1526473Z hint: Using 'master' as the name for the initial branch. This default branch name
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1529383Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1532366Z hint: to use in all of your new repositories, which will suppress this warning,
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1534518Z hint: call:
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1535488Z hint:
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1536727Z hint: 	git config --global init.defaultBranch <name>
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1538423Z hint:
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1539965Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1543049Z hint: 'development'. The just-created branch can be renamed via this command:
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1545142Z hint:
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1546221Z hint: 	git branch -m <name>
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1547518Z hint:
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1549206Z hint: Disable this message with "git config set advice.defaultBranchName false"
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1553046Z Initialized empty Git repository in /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild/.git/
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1558562Z [command]/usr/bin/git remote add origin https://github.com/ashleydavis/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1626490Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1629881Z ##[group]Disabling automatic garbage collection
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1632104Z [command]/usr/bin/git config --local gc.auto 0
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1670631Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1672702Z ##[group]Setting up auth
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1682389Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.1728900Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.2219512Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.2268837Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.2522006Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.2569322Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.2819203Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.2869017Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.2870293Z ##[group]Fetching the repository
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.2885903Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +653433aa2c46832b6c21d46a5e9c142ec49777d5:refs/remotes/origin/main
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.6902756Z From https://github.com/ashleydavis/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.6904470Z  * [new ref]         653433aa2c46832b6c21d46a5e9c142ec49777d5 -> origin/main
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.6907932Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.6909392Z ##[group]Determining the checkout info
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.6911314Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.6917664Z [command]/usr/bin/git sparse-checkout disable
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.6990178Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.7036144Z ##[group]Checking out the ref
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.7039385Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.7717218Z Switched to a new branch 'main'
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.7721369Z branch 'main' set up to track 'origin/main'.
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.7738004Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.7795305Z [command]/usr/bin/git log -1 --format=%H
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.7830895Z 653433aa2c46832b6c21d46a5e9c142ec49777d5
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8178891Z ##[group]Run oven-sh/setup-bun@v2
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8179901Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8180933Z   bun-version: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8181789Z   no-cache: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8188987Z   token: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8189753Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8190770Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8191636Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8192490Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8193386Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:19:49.8194323Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.1025146Z Cache hit for: bun-fR4r1tsFeXfPQkusQwkKD2kGnsE=
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.4454534Z Received 33843765 of 33843765 (100.0%), 109.8 MBs/sec
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.4456232Z Cache Size: ~32 MB (33843765 B)
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.4486598Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3c660dad-6d3d-466a-afbd-8b7dde731dc6/cache.tzst -P -C /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild --use-compress-program unzstd
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6191000Z Cache restored successfully
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6214632Z [command]/home/runner/.bun/bin/bun --revision
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6299773Z 1.3.14+0d9b296af
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6307378Z Using a cached version of Bun: 1.3.14+0d9b296af
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6594474Z ##[group]Run actions/setup-node@v4
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6595185Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6595743Z   node-version: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6596344Z   always-auth: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6596921Z   check-latest: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6600119Z   token: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6600884Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6601422Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6602004Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6602598Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6603229Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.6603847Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.8110863Z Attempting to download 24.15.0...
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.8228231Z (node:2378) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+app-build	UNKNOWN STEP	2026-11-15T05:19:50.8229817Z (Use `node --trace-deprecation ...` to show where the warning was created)
+app-build	UNKNOWN STEP	2026-11-15T05:19:51.3784788Z Acquiring 24.15.0 - x64 from https://github.com/actions/node-versions/releases/download/24.15.0-24511264946/node-24.15.0-linux-x64.tar.gz
+app-build	UNKNOWN STEP	2026-11-15T05:19:51.8029990Z Extracting ...
+app-build	UNKNOWN STEP	2026-11-15T05:19:51.8175609Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/a66a27b9-511c-4103-9925-cec110bab94e -f /home/runner/work/_temp/b752f602-c91b-45d6-acb5-b902d70d69c1
+app-build	UNKNOWN STEP	2026-11-15T05:19:53.0269804Z Adding to the cache ...
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.6958481Z ##[group]Environment details
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9455822Z node: v24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9456300Z npm: 11.12.1
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9456697Z yarn: 1.22.22
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9457343Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9701114Z ##[group]Run jdx/mise-action@v2
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9701453Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9701682Z   install_args: zig jq
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9701924Z   install: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9702126Z   cache: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9702337Z   cache_save: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9702569Z   cache_key_prefix: mise-v0
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9702812Z   experimental: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9703032Z   log_level: info
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9703253Z   reshim: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9705726Z   github_token: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9705950Z   fetch_from_github: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9706180Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9706367Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9706776Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9707009Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9707255Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:19:54.9707509Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:55.0911258Z ##[group]Restoring mise cache
+app-build	UNKNOWN STEP	2026-11-15T05:19:55.2273646Z [command]/usr/bin/ldd --version
+app-build	UNKNOWN STEP	2026-11-15T05:19:55.2331646Z ldd (Ubuntu GLIBC 2.39-0ubuntu8.9) 2.39
+app-build	UNKNOWN STEP	2026-11-15T05:19:55.2332622Z Copyright (C) 2024 Free Software Foundation, Inc.
+app-build	UNKNOWN STEP	2026-11-15T05:19:55.2333630Z This is free software; see the source for copying conditions.  There is NO
+app-build	UNKNOWN STEP	2026-11-15T05:19:55.2334818Z warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+app-build	UNKNOWN STEP	2026-11-15T05:19:55.2335776Z Written by Roland McGrath and Ulrich Drepper.
+app-build	UNKNOWN STEP	2026-11-15T05:19:55.2982015Z Cache hit for: mise-v0-linux-x64-9ce104d02e7009dbe537b57fda0e747a54fedf18a2f45dff9c2c4209b85ea59d-3bf4a0d67d88dc5aa5be7ff0ac03c5258bf51c307989c5c5477fdc7134d93fb1
+app-build	UNKNOWN STEP	2026-11-15T05:19:56.1471184Z Received 143431102 of 143431102 (100.0%), 169.5 MBs/sec
+app-build	UNKNOWN STEP	2026-11-15T05:19:56.1472236Z Cache Size: ~137 MB (143431102 B)
+app-build	UNKNOWN STEP	2026-11-15T05:19:56.1597187Z [command]/usr/bin/tar -xf /home/runner/work/_temp/027656b8-49c9-49c5-9447-45dde692c1c9/cache.tzst -P -C /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild --use-compress-program unzstd
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6118570Z Cache restored successfully
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6185817Z mise cache restored from key: mise-v0-linux-x64-9ce104d02e7009dbe537b57fda0e747a54fedf18a2f45dff9c2c4209b85ea59d-3bf4a0d67d88dc5aa5be7ff0ac03c5258bf51c307989c5c5477fdc7134d93fb1
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6191883Z ##[group]Setting env vars
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6192698Z Setting MISE_LOG_LEVEL=info
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6198942Z Setting GITHUB_TOKEN=***
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6200077Z Setting MISE_TRUSTED_CONFIG_PATHS=/home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6201271Z Setting MISE_YES=1
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6201949Z Adding /home/runner/.local/share/mise/shims to PATH
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6202850Z ##[group]Running mise --version
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6218846Z [command]/home/runner/.local/share/mise/bin/mise --version
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6323100Z 2026.11.8 linux-x64 (2026-11-13)
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6349110Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6349689Z ##[group]Running mise install zig jq
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6363988Z [command]/home/runner/.local/share/mise/bin/mise install zig jq
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.6516857Z ^[[2mmise^[[0m ^[[2mby @jdx^[[0m – installing 2 tools
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.7472792Z ^[[2mmise^[[0m ^[[38;5;11m⇢^[[0m ^[[34mzig^[[0m@0.16.0  94ms · already installed
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.7722190Z ^[[2mmise^[[0m ^[[38;5;11m⇢^[[0m ^[[34mjq^[[0m@1.7.1    117ms · already installed
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.7723938Z ^[[2mmise^[[0m ^[[36m████████████████^[[0m^[[31m^[[0m^[[2m^[[0m 2/2 · installed 0 tools · 2 already installed in 120ms
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.8175759Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.8176430Z ##[group]Running mise ls
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.8189550Z [command]/home/runner/.local/share/mise/bin/mise ls
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.8353709Z bun                              1.3.14 (missing)   ~/work/ziggy-example-rsbuild/ziggy-example-rsbuild/mise.toml  1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.8355442Z github:ashleydavis/what-changed  0.0.6 (missing)    ~/work/ziggy-example-rsbuild/ziggy-example-rsbuild/mise.toml  0.0.6
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.8362459Z jq                               1.7.1              ~/work/ziggy-example-rsbuild/ziggy-example-rsbuild/mise.toml  1.7.1
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.8363898Z node                             24.15.0 (missing)  ~/work/ziggy-example-rsbuild/ziggy-example-rsbuild/mise.toml  24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.8365253Z zig                              0.16.0             ~/work/ziggy-example-rsbuild/ziggy-example-rsbuild/mise.toml  0.16.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.8372888Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9219733Z ##[group]Run actions/cache@v4
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9220032Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9220247Z   path: ~/.bun/install/cache
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9221173Z   key: Linux-bun-e0ff50aa51d1c2e447ae9ecec2bac7b4e038ea1ae2af99f6505fc05f28b17dcf
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9221932Z   restore-keys: Linux-bun-
+app-build	UNKNOWN STEP	
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9222201Z   enableCrossOsArchive: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9222460Z   fail-on-cache-miss: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9222702Z   lookup-only: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9222925Z   save-always: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9223131Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9223330Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9223552Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9223791Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9224036Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9224292Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9226788Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9227212Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9227700Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:19:57.9227905Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:58.0357460Z (node:2473) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+app-build	UNKNOWN STEP	2026-11-15T05:19:58.0358527Z (Use `node --trace-deprecation ...` to show where the warning was created)
+app-build	UNKNOWN STEP	2026-11-15T05:19:58.0986708Z Cache hit for: Linux-bun-e0ff50aa51d1c2e447ae9ecec2bac7b4e038ea1ae2af99f6505fc05f28b17dcf
+app-build	UNKNOWN STEP	2026-11-15T05:19:58.1113211Z (node:2473) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+app-build	UNKNOWN STEP	2026-11-15T05:19:58.5312026Z Received 64711104 of 64711104 (100.0%), 163.3 MBs/sec
+app-build	UNKNOWN STEP	2026-11-15T05:19:58.5312610Z Cache Size: ~62 MB (64711104 B)
+app-build	UNKNOWN STEP	2026-11-15T05:19:58.5342967Z [command]/usr/bin/tar -xf /home/runner/work/_temp/82bf4593-4483-49a6-ba32-6430a8888c67/cache.tzst -P -C /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild --use-compress-program unzstd
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2267685Z Cache restored successfully
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2544209Z Cache restored from key: Linux-bun-e0ff50aa51d1c2e447ae9ecec2bac7b4e038ea1ae2af99f6505fc05f28b17dcf
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2860787Z Prepare all required actions
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2921631Z ##[group]Run ./.github/actions/retry-install
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2921964Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2922169Z   run: bun install
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2922392Z   attempts: 3
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2922606Z   delay-seconds: 15
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2922824Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2923019Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2923246Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2923482Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2923745Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2924006Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2926594Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2927026Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2927488Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2927699Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.2987114Z ##[start-action display=Run set -uo pipefail;id=__self.__run]
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3023214Z ##[group]Run set -uo pipefail
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3023660Z ^[[36;1mset -uo pipefail^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3023937Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3024134Z ^[[36;1m#^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3024570Z ^[[36;1m# Prints the verify entries that are not satisfied, each preceded by a space. Empty when they^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3025279Z ^[[36;1m# all resolve. Word splitting on the input is intended: it is a space-separated list. An entry^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3025895Z ^[[36;1m# holding "|"-separated alternatives is satisfied by any one of them.^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3026293Z ^[[36;1m#^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3026502Z ^[[36;1mmissing_tools() {^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3026760Z ^[[36;1m    local missing=""^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3027014Z ^[[36;1m    local entry^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3027265Z ^[[36;1m    local alternative^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3027521Z ^[[36;1m    local found^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3027786Z ^[[36;1m    for entry in $RETRY_INSTALL_VERIFY; do^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3028240Z ^[[36;1m        found=""^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3028547Z ^[[36;1m        for alternative in ${entry//|/ }; do^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3029147Z ^[[36;1m            if command -v "$alternative" >/dev/null 2>&1; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3029501Z ^[[36;1m                found="yes"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3029770Z ^[[36;1m                break^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3030012Z ^[[36;1m            fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3030240Z ^[[36;1m        done^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3030681Z ^[[36;1m        if [ -z "$found" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3031001Z ^[[36;1m            missing="$missing $entry"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3031297Z ^[[36;1m        fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3031511Z ^[[36;1m    done^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3031731Z ^[[36;1m    echo "$missing"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3031970Z ^[[36;1m}^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3032166Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3032365Z ^[[36;1minstallStatus=0^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3032621Z ^[[36;1mmissing=""^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3032834Z ^[[36;1mattempt=1^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3033051Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3033328Z ^[[36;1mwhile [ "$attempt" -le "$RETRY_INSTALL_ATTEMPTS" ]; do^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3033688Z ^[[36;1m    installStatus=0^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3033996Z ^[[36;1m    bash -c "$RETRY_INSTALL_RUN" || installStatus=$?^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3034343Z ^[[36;1m    missing="$(missing_tools)"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3034602Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3034873Z ^[[36;1m    if [ "$installStatus" -eq 0 ] && [ -z "$missing" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3035217Z ^[[36;1m        exit 0^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3035449Z ^[[36;1m    fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3035647Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3035869Z ^[[36;1m    if [ "$installStatus" -ne 0 ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3036308Z ^[[36;1m        echo "Attempt $attempt of $RETRY_INSTALL_ATTEMPTS exited $installStatus."^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3036717Z ^[[36;1m    fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3036930Z ^[[36;1m    if [ -n "$missing" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3037628Z ^[[36;1m        echo "Attempt $attempt of $RETRY_INSTALL_ATTEMPTS reported success but left these missing:$missing"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3038136Z ^[[36;1m    fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3038333Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3038596Z ^[[36;1m    if [ "$attempt" -eq "$RETRY_INSTALL_ATTEMPTS" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3038924Z ^[[36;1m        break^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3039146Z ^[[36;1m    fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3039336Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3039572Z ^[[36;1m    delay=$((RETRY_INSTALL_DELAY * attempt))^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3039921Z ^[[36;1m    echo "Waiting ${delay}s before retrying."^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3040234Z ^[[36;1m    sleep "$delay"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3056545Z ^[[36;1m    attempt=$((attempt + 1))^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3056915Z ^[[36;1mdone^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3057137Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3057355Z ^[[36;1mif [ -n "$missing" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3057861Z ^[[36;1m    echo "::error::Install failed after $RETRY_INSTALL_ATTEMPTS attempts; still missing:$missing"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3058338Z ^[[36;1melse^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3058791Z ^[[36;1m    echo "::error::Install failed after $RETRY_INSTALL_ATTEMPTS attempts (last exit $installStatus)."^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3059283Z ^[[36;1mfi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3059483Z ^[[36;1mexit 1^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3084936Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3085307Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3085517Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3085749Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3085996Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3086255Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3086521Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3089128Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3089548Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3090009Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3090233Z   RETRY_INSTALL_RUN: bun install
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3090887Z   RETRY_INSTALL_VERIFY: 
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3091146Z   RETRY_INSTALL_ATTEMPTS: 3
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3091401Z   RETRY_INSTALL_DELAY: 15
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3091663Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.3232557Z bun install v1.3.14 (0d9b296a)
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4789903Z 
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4801715Z + @rsbuild/core@2.2.11
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4802248Z + @types/jest@29.5.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4802606Z + @types/node@22.20.5
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4802938Z + jest@29.7.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4803266Z + native-run@2.0.3
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4803596Z + ts-jest@29.4.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4803928Z + typescript@5.9.3
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4804489Z + ziggy-remote-control-server@github:ashleydavis/ziggy#4bb9fa7
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4805127Z + ziggy@github:ashleydavis/ziggy#4bb9fa7
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4805416Z 
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4805677Z 376 packages installed [159.00ms]
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4841317Z ##[end-action id=__self.__run;outcome=success;conclusion=success;duration_ms=185]
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4921570Z ##[group]Run actions/setup-java@v4
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4921886Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4922108Z   distribution: temurin
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4922353Z   java-version: 17
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4922586Z   java-package: jdk
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4922832Z   check-latest: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4923064Z   server-id: github
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4923289Z   server-username: GITHUB_ACTOR
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4923572Z   server-password: GITHUB_TOKEN
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4923841Z   overwrite-settings: true
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4924094Z   job-status: success
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4926502Z   token: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4926706Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4926908Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4927138Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4927385Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4927860Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4928138Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4930959Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4931421Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4931884Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.4932098Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6692610Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6701089Z ##[group]Installed distributions
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6750212Z Resolved Java 17.0.21+9 from tool-cache
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6751254Z Setting Java 17.0.21+9 as the default
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6762287Z (node:2497) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6763759Z (Use `node --trace-deprecation ...` to show where the warning was created)
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6766967Z Creating toolchains.xml for JDK version 17 from temurin
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6854417Z Writing to /home/runner/.m2/toolchains.xml
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6854892Z 
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6855152Z Java configuration:
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6855688Z   Distribution: temurin
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6856178Z   Version: 17.0.21+9
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6856904Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6857445Z 
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6858012Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6862665Z Creating settings.xml with server-id: github
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.6911551Z Writing to /home/runner/.m2/settings.xml
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7108561Z ##[group]Run actions/cache@v4
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7108893Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7109165Z   path: /usr/local/lib/android/sdk/ndk/25.1.8937393
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7109627Z   key: Linux-android-ndk-25.1.8937393
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7110129Z   enableCrossOsArchive: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7110868Z   fail-on-cache-miss: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7111291Z   lookup-only: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7111659Z   save-always: false
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7112016Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7112333Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7112711Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7113100Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7113528Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7113941Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7118374Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7119062Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7120151Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7120982Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7121833Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.7122561Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.8306097Z (node:2509) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.8307094Z (Use `node --trace-deprecation ...` to show where the warning was created)
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.8889995Z Cache hit for: Linux-android-ndk-25.1.8937393
+app-build	UNKNOWN STEP	2026-11-15T05:19:59.9003738Z (node:2509) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+app-build	UNKNOWN STEP	2026-11-15T05:20:00.9343328Z Received 205520896 of 500697899 (41.0%), 194.3 MBs/sec
+app-build	UNKNOWN STEP	2026-11-15T05:20:01.9402628Z Received 436207616 of 500697899 (87.1%), 206.5 MBs/sec
+app-build	UNKNOWN STEP	2026-11-15T05:20:02.2758780Z Received 500697899 of 500697899 (100.0%), 203.1 MBs/sec
+app-build	UNKNOWN STEP	2026-11-15T05:20:02.2762029Z Cache Size: ~478 MB (500697899 B)
+app-build	UNKNOWN STEP	2026-11-15T05:20:02.2804104Z [command]/usr/bin/tar -xf /home/runner/work/_temp/61f6dbfe-adfb-4827-9fb9-7df78f460422/cache.tzst -P -C /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild --use-compress-program unzstd
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.7880861Z Cache restored successfully
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.8216283Z Cache restored from key: Linux-android-ndk-25.1.8937393
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.8604912Z Prepare all required actions
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9529664Z ##[group]Run ./.github/actions/retry-install
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9530174Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9530748Z   run: bun run setup
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9531134Z   attempts: 3
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9531488Z   delay-seconds: 15
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9531843Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9532166Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9532542Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9532962Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9533394Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9533831Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9538427Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9539130Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9539936Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9540663Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9541715Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9542393Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:20:05.9549909Z ##[start-action display=Run set -uo pipefail;id=__self_2.__run]
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0695715Z ##[group]Run set -uo pipefail
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0696139Z ^[[36;1mset -uo pipefail^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0696605Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0696958Z ^[[36;1m#^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0697683Z ^[[36;1m# Prints the verify entries that are not satisfied, each preceded by a space. Empty when they^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0698839Z ^[[36;1m# all resolve. Word splitting on the input is intended: it is a space-separated list. An entry^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0699877Z ^[[36;1m# holding "|"-separated alternatives is satisfied by any one of them.^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0700937Z ^[[36;1m#^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0701315Z ^[[36;1mmissing_tools() {^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0701764Z ^[[36;1m    local missing=""^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0702214Z ^[[36;1m    local entry^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0702670Z ^[[36;1m    local alternative^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0703118Z ^[[36;1m    local found^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0703608Z ^[[36;1m    for entry in $RETRY_INSTALL_VERIFY; do^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0704152Z ^[[36;1m        found=""^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0704631Z ^[[36;1m        for alternative in ${entry//|/ }; do^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0705301Z ^[[36;1m            if command -v "$alternative" >/dev/null 2>&1; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0705926Z ^[[36;1m                found="yes"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0706761Z ^[[36;1m                break^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0707209Z ^[[36;1m            fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0707599Z ^[[36;1m        done^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0708007Z ^[[36;1m        if [ -z "$found" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0708559Z ^[[36;1m            missing="$missing $entry"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0709073Z ^[[36;1m        fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0709440Z ^[[36;1m    done^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0709819Z ^[[36;1m    echo "$missing"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0710243Z ^[[36;1m}^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0710866Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0711237Z ^[[36;1minstallStatus=0^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0711689Z ^[[36;1mmissing=""^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0712086Z ^[[36;1mattempt=1^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0712469Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0712971Z ^[[36;1mwhile [ "$attempt" -le "$RETRY_INSTALL_ATTEMPTS" ]; do^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0713613Z ^[[36;1m    installStatus=0^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0714179Z ^[[36;1m    bash -c "$RETRY_INSTALL_RUN" || installStatus=$?^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0714845Z ^[[36;1m    missing="$(missing_tools)"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0715337Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0715837Z ^[[36;1m    if [ "$installStatus" -eq 0 ] && [ -z "$missing" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0716487Z ^[[36;1m        exit 0^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0716901Z ^[[36;1m    fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0717280Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0717693Z ^[[36;1m    if [ "$installStatus" -ne 0 ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0718488Z ^[[36;1m        echo "Attempt $attempt of $RETRY_INSTALL_ATTEMPTS exited $installStatus."^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0719593Z ^[[36;1m    fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0720067Z ^[[36;1m    if [ -n "$missing" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0721292Z ^[[36;1m        echo "Attempt $attempt of $RETRY_INSTALL_ATTEMPTS reported success but left these missing:$missing"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0722247Z ^[[36;1m    fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0722644Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0722960Z ^[[36;1m    if [ "$attempt" -eq "$RETRY_INSTALL_ATTEMPTS" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0723343Z ^[[36;1m        break^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0723587Z ^[[36;1m    fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0723794Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0724049Z ^[[36;1m    delay=$((RETRY_INSTALL_DELAY * attempt))^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0724426Z ^[[36;1m    echo "Waiting ${delay}s before retrying."^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0724751Z ^[[36;1m    sleep "$delay"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0725019Z ^[[36;1m    attempt=$((attempt + 1))^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0725299Z ^[[36;1mdone^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0725503Z ^[[36;1m^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0725720Z ^[[36;1mif [ -n "$missing" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0726220Z ^[[36;1m    echo "::error::Install failed after $RETRY_INSTALL_ATTEMPTS attempts; still missing:$missing"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0726704Z ^[[36;1melse^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0727136Z ^[[36;1m    echo "::error::Install failed after $RETRY_INSTALL_ATTEMPTS attempts (last exit $installStatus)."^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0727624Z ^[[36;1mfi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0727826Z ^[[36;1mexit 1^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0759800Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0760685Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0761034Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0761434Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0761857Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0762307Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0762773Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0767532Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0768276Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0769085Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0769699Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0770897Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0771663Z   RETRY_INSTALL_RUN: bun run setup
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0772169Z   RETRY_INSTALL_VERIFY: 
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0772623Z   RETRY_INSTALL_ATTEMPTS: 3
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0773088Z   RETRY_INSTALL_DELAY: 15
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0773834Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.0888781Z $ bash ./scripts/setup.sh
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.3858465Z Using JDK 17 at: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.3859134Z Installing the Android SDK into: /usr/local/lib/android/sdk
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.3942682Z Command-line tools already present, reusing them.
+app-build	UNKNOWN STEP	2026-11-15T05:20:06.3943332Z Accepting SDK licenses...
+app-build	UNKNOWN STEP	2026-11-15T05:20:12.2135804Z Installing packages:
+app-build	UNKNOWN STEP	2026-11-15T05:20:12.2136800Z   - platform-tools
+app-build	UNKNOWN STEP	2026-11-15T05:20:12.2138020Z   - platforms;android-35
+app-build	UNKNOWN STEP	2026-11-15T05:20:12.2138759Z   - build-tools;35.0.0
+app-build	UNKNOWN STEP	2026-11-15T05:20:12.2139298Z   - ndk;25.1.8937393
+app-build	UNKNOWN STEP	2026-11-15T05:20:12.2139734Z   - emulator
+app-build	UNKNOWN STEP	2026-11-15T05:20:12.2140303Z   - system-images;android-36;google_apis;x86_64
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.0485166Z Loading package information...                                                  
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.1638712Z Loading local repository...                                                     
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.1642334Z [                                       ] 3% Loading local repository...        
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.1753334Z [                                       ] 3% Fetch remote repository...         
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.5522895Z [=                                      ] 3% Fetch remote repository...         
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.6317982Z [=                                      ] 4% Fetch remote repository...         
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.6725575Z [=                                      ] 5% Fetch remote repository...         
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.7667797Z [==                                     ] 5% Fetch remote repository...         
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.8428149Z [==                                     ] 6% Fetch remote repository...         
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.9348336Z [==                                     ] 7% Fetch remote repository...         
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.9371542Z [==                                     ] 7% Computing updates...               
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.9503971Z [===                                    ] 8% Computing updates...               
+app-build	UNKNOWN STEP	2026-11-15T05:20:13.9642724Z [===                                    ] 10% Computing updates...              
+app-build	UNKNOWN STEP	2026-11-15T05:20:14.4019885Z [===                                    ] 10% Installing Android Emulator       
+app-build	UNKNOWN STEP	2026-11-15T05:20:14.5512641Z [===                                    ] 10% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:14.7449791Z [====                                   ] 10% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:14.9962990Z [====                                   ] 11% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.1528177Z [====                                   ] 12% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.2228922Z [=====                                  ] 13% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.2849444Z [=====                                  ] 14% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.3274059Z [=====                                  ] 15% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.3637633Z [======                                 ] 15% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.4333335Z [======                                 ] 16% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.4987016Z [======                                 ] 17% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.5694583Z [=======                                ] 18% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.6335027Z [=======                                ] 19% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.6609131Z [=======                                ] 20% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.6931621Z [========                               ] 20% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.7354464Z [========                               ] 21% Downloading emulator-linux_x64-167
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.9033427Z [========                               ] 21% Unzipping...                      
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.9034916Z [========                               ] 21% Unzipping... emulator/            
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.9035628Z [========                               ] 21% Unzipping... emulator/resources/  
+app-build	UNKNOWN STEP	2026-11-15T05:20:15.9472092Z [========                               ] 21% Unzipping... emulator/qsn         
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.0094494Z [========                               ] 21% Unzipping... emulator/emulator    
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.0341644Z [========                               ] 21% Unzipping... emulator/netsimd     
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.1281932Z [========                               ] 22% Unzipping... emulator/netsimd     
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.1283195Z [========                               ] 22% Unzipping... emulator/bin64/      
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.1284296Z [========                               ] 22% Unzipping... emulator/qemu/       
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.1307989Z [========                               ] 22% Unzipping... emulator/NOTICE.txt  
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.1501187Z [========                               ] 22% Unzipping... emulator/crashpad_han
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.1505642Z [========                               ] 22% Unzipping... emulator/source.prope
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2113953Z [========                               ] 22% Unzipping... emulator/nimble_bridg
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2117060Z [========                               ] 22% Unzipping... emulator/LICENSE     
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2117912Z [========                               ] 22% Unzipping... emulator/lib/        
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2205638Z [========                               ] 22% Unzipping... emulator/qemu-img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2207209Z [========                               ] 22% Unzipping... emulator/include/    
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2211608Z [========                               ] 22% Unzipping... emulator/NOTICE.csv  
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2219442Z [========                               ] 22% Unzipping... emulator/lib64/      
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2378111Z [========                               ] 22% Unzipping... emulator/emulator-che
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2583616Z [========                               ] 22% Unzipping... emulator/crashreport 
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2589573Z [========                               ] 22% Unzipping... emulator/mksdcard    
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2802430Z [========                               ] 22% Unzipping... emulator/resources/To
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2871912Z [========                               ] 22% Unzipping... emulator/resources/de
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2873207Z [========                               ] 22% Unzipping... emulator/resources/To
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.2899823Z [========                               ] 22% Unzipping... emulator/resources/de
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3021678Z [========                               ] 22% Unzipping... emulator/resources/To
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3022654Z [========                               ] 22% Unzipping... emulator/resources/ma
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3051654Z [========                               ] 22% Unzipping... emulator/resources/de
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3052638Z [========                               ] 22% Unzipping... emulator/resources/sk
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3086630Z [========                               ] 22% Unzipping... emulator/resources/de
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3087527Z [========                               ] 22% Unzipping... emulator/resources/ma
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3099918Z [========                               ] 22% Unzipping... emulator/resources/po
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3176931Z [========                               ] 22% Unzipping... emulator/resources/ma
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3182889Z [=========                              ] 23% Unzipping... emulator/resources/ma
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3256359Z [=========                              ] 23% Unzipping... emulator/resources/sk
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3273003Z [=========                              ] 23% Unzipping... emulator/resources/ma
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3307140Z [=========                              ] 23% Unzipping... emulator/bin64/e2fsck
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3341460Z [=========                              ] 23% Unzipping... emulator/bin64/fsck.e
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3363763Z [=========                              ] 23% Unzipping... emulator/bin64/tune2f
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3377416Z [=========                              ] 23% Unzipping... emulator/bin64/resize
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.3401206Z [=========                              ] 23% Unzipping... emulator/bin64/mkfs.e
+app-build	UNKNOWN STEP	2026-11-15T05:20:16.7105111Z [=========                              ] 23% Unzipping... emulator/qemu/linux-x
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.0574832Z [=========                              ] 24% Unzipping... emulator/qemu/linux-x
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.2275501Z [=========                              ] 25% Unzipping... emulator/qemu/linux-x
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4101616Z [==========                             ] 25% Unzipping... emulator/qemu/linux-x
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4104593Z [==========                             ] 25% Unzipping... emulator/lib/emulator
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4107182Z [==========                             ] 25% Unzipping... emulator/lib/rtc_serv
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4110962Z [==========                             ] 25% Unzipping... emulator/lib/advanced
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4117212Z [==========                             ] 25% Unzipping... emulator/lib/cmake/  
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4118135Z [==========                             ] 25% Unzipping... emulator/lib/emulator
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4118823Z [==========                             ] 25% Unzipping... emulator/lib/control_
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4121336Z [==========                             ] 25% Unzipping... emulator/lib/emulated
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4135140Z [==========                             ] 25% Unzipping... emulator/lib/rtc_serv
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4136558Z [==========                             ] 25% Unzipping... emulator/lib/emu-orig
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4137820Z [==========                             ] 25% Unzipping... emulator/lib/hardware
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4139058Z [==========                             ] 25% Unzipping... emulator/lib/pkgconfi
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4140328Z [==========                             ] 25% Unzipping... emulator/lib/pc-bios/
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4141862Z [==========                             ] 25% Unzipping... emulator/lib/snapshot
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4142997Z [==========                             ] 25% Unzipping... emulator/lib/adb_serv
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4149067Z [==========                             ] 25% Unzipping... emulator/lib/hostapd.
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4151958Z [==========                             ] 25% Unzipping... emulator/lib/grpc_end
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4169689Z [==========                             ] 25% Unzipping... emulator/lib/ca-bundl
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4175811Z [==========                             ] 25% Unzipping... emulator/lib/ui_contr
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4176937Z [==========                             ] 25% Unzipping... emulator/lib/snapshot
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4191582Z [==========                             ] 25% Unzipping... emulator/lib/ice_conf
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4283895Z [==========                             ] 25% Unzipping... emulator/lib/libflatb
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4489261Z [==========                             ] 26% Unzipping... emulator/lib/libflatb
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4496618Z [==========                             ] 26% Unzipping... emulator/lib/emulator
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4499357Z [==========                             ] 26% Unzipping... emulator/lib/waterfal
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4502300Z [==========                             ] 26% Unzipping... emulator/lib/emulated
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4515509Z [==========                             ] 26% Unzipping... emulator/lib/cmake/fl
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4517315Z [==========                             ] 26% Unzipping... emulator/lib/pkgconfi
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4714835Z [==========                             ] 26% Unzipping... emulator/lib/pc-bios/
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4788130Z [==========                             ] 26% Unzipping... emulator/include/flat
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4857505Z [==========                             ] 26% Unzipping... emulator/lib64/libgli
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4978983Z [==========                             ] 26% Unzipping... emulator/lib64/libpro
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.4979928Z [==========                             ] 26% Unzipping... emulator/lib64/qt/   
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.5375953Z [==========                             ] 26% Unzipping... emulator/lib64/liband
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.6072222Z [==========                             ] 26% Unzipping... emulator/lib64/libgfx
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.6073181Z [==========                             ] 26% Unzipping... emulator/lib64/gles_l
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.6082187Z [==========                             ] 26% Unzipping... emulator/lib64/liband
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.6083257Z [==========                             ] 26% Unzipping... emulator/lib64/vulkan
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.6084224Z [==========                             ] 26% Unzipping... emulator/lib64/gles_s
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.6087899Z [==========                             ] 26% Unzipping... emulator/lib64/libemu
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.6216783Z [==========                             ] 26% Unzipping... emulator/lib64/libpro
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.7736087Z [==========                             ] 26% Unzipping... emulator/lib64/liband
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.7756939Z [==========                             ] 26% Unzipping... emulator/lib64/libtcm
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.7760159Z [==========                             ] 26% Unzipping... emulator/lib64/libima
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.7826740Z [==========                             ] 26% Unzipping... emulator/lib64/libc++
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8120802Z [==========                             ] 26% Unzipping... emulator/lib64/liband
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8168928Z [==========                             ] 26% Unzipping... emulator/lib64/libabs
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8169937Z [==========                             ] 26% Unzipping... emulator/lib64/gles_a
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8241554Z [==========                             ] 26% Unzipping... emulator/lib64/libsha
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8308807Z [==========                             ] 26% Unzipping... emulator/lib64/libc++
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8309996Z [==========                             ] 26% Unzipping... emulator/lib64/qt/res
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8311374Z [==========                             ] 26% Unzipping... emulator/lib64/qt/lib
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8313539Z [==========                             ] 26% Unzipping... emulator/lib64/qt/tra
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8314601Z [==========                             ] 26% Unzipping... emulator/lib64/qt/plu
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.8361610Z [==========                             ] 26% Unzipping... emulator/lib64/qt/res
+app-build	UNKNOWN STEP	2026-11-15T05:20:17.9067057Z [==========                             ] 27% Unzipping... emulator/lib64/qt/res
+app-build	UNKNOWN STEP	2026-11-15T05:20:18.0161409Z [==========                             ] 27% Unzipping... emulator/lib64/qt/lib
+app-build	UNKNOWN STEP	2026-11-15T05:20:18.4053786Z [===========                            ] 28% Unzipping... emulator/lib64/qt/lib
+app-build	UNKNOWN STEP	2026-11-15T05:20:18.8024513Z [===========                            ] 29% Unzipping... emulator/lib64/qt/lib
+app-build	UNKNOWN STEP	2026-11-15T05:20:19.0074133Z [===========                            ] 30% Unzipping... emulator/lib64/qt/lib
+app-build	UNKNOWN STEP	2026-11-15T05:20:19.0952527Z [============                           ] 30% Unzipping... emulator/lib64/qt/lib
+app-build	UNKNOWN STEP	2026-11-15T05:20:19.2136438Z [============                           ] 30% Unzipping... emulator/lib64/qt/tra
+app-build	UNKNOWN STEP	2026-11-15T05:20:19.2263554Z [============                           ] 30% Unzipping... emulator/lib64/qt/plu
+app-build	UNKNOWN STEP	2026-11-15T05:20:19.2478073Z [============                           ] 30% Unzipping... emulator/lib64/gles_l
+app-build	UNKNOWN STEP	2026-11-15T05:20:19.3111110Z [============                           ] 31% Unzipping... emulator/lib64/gles_l
+app-build	UNKNOWN STEP	2026-11-15T05:20:19.6666691Z [============                           ] 31% Unzipping... emulator/lib64/vulkan
+app-build	UNKNOWN STEP	2026-11-15T05:20:19.9961924Z [============                           ] 32% Unzipping... emulator/lib64/vulkan
+app-build	UNKNOWN STEP	2026-11-15T05:20:20.0637267Z [============                           ] 32% Unzipping... emulator/lib64/gles_s
+app-build	UNKNOWN STEP	2026-11-15T05:20:20.1218610Z [============                           ] 32% Unzipping... emulator/lib64/gles_a
+app-build	UNKNOWN STEP	2026-11-15T05:20:20.1908598Z [=============                          ] 33% Unzipping... emulator/lib64/gles_a
+app-build	UNKNOWN STEP	2026-11-15T05:20:20.5512804Z [=====================                  ] 55% Unzipping... emulator/lib64/gles_a
+app-build	UNKNOWN STEP	2026-11-15T05:20:20.5721415Z [=====================                  ] 55% Installing Google APIs Intel x86_6
+app-build	UNKNOWN STEP	2026-11-15T05:20:20.6426295Z [=====================                  ] 55% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:20.8116994Z [======================                 ] 55% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:21.1238541Z [======================                 ] 56% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:21.4395358Z [======================                 ] 57% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:21.7473672Z [=======================                ] 58% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:22.0353167Z [=======================                ] 59% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:22.2179140Z [=======================                ] 60% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:22.3553732Z [========================               ] 60% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:22.6872045Z [========================               ] 61% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:22.9968987Z [========================               ] 62% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:23.3117346Z [=========================              ] 63% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:23.6262686Z [=========================              ] 64% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:23.7721022Z [=========================              ] 65% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:23.9655612Z [==========================             ] 65% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2082820Z [==========================             ] 66% Downloading x86_64-36_r07.zip... e
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2104793Z [==========================             ] 66% Unzipping... emulator/lib64/gles_a
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2604484Z [==========================             ] 66% Unzipping... x86_64/NOTICE.txt    
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2606644Z [==========================             ] 66% Unzipping... x86_64/VerifiedBootPa
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2609124Z [==========================             ] 66% Unzipping... x86_64/advancedFeatur
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2612207Z [==========================             ] 66% Unzipping... x86_64/build.prop    
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2614715Z [==========================             ] 66% Unzipping... x86_64/data/empty_dat
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2619067Z [==========================             ] 66% Unzipping... x86_64/data/local.pro
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2622652Z [==========================             ] 66% Unzipping... x86_64/data/misc/Gold
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2628132Z [==========================             ] 66% Unzipping... x86_64/data/misc/emul
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2640196Z [==========================             ] 66% Unzipping... x86_64/data/misc/mode
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.2658089Z [==========================             ] 66% Unzipping... x86_64/data/misc/pixe
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.3229065Z [==========================             ] 66% Unzipping... x86_64/encryptionkey.
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.4417524Z [==========================             ] 66% Unzipping... x86_64/kernel-ranchu 
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.4419608Z [==========================             ] 66% Unzipping... x86_64/kernel_cmdline
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.4554580Z [==========================             ] 66% Unzipping... x86_64/ramdisk.img   
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.4556492Z [==========================             ] 66% Unzipping... x86_64/source.propert
+app-build	UNKNOWN STEP	2026-11-15T05:20:24.8570920Z [==========================             ] 66% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:26.4084262Z [==========================             ] 67% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:28.1368247Z [===========================            ] 68% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:29.6651213Z [===========================            ] 69% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:30.5185021Z [===========================            ] 70% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:31.3017206Z [============================           ] 70% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:33.2169117Z [============================           ] 71% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:34.6254470Z [============================           ] 72% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:36.4036886Z [=============================          ] 73% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:38.0958300Z [=============================          ] 74% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:39.0071534Z [=============================          ] 75% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:39.6567572Z [==============================         ] 75% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:40.7837928Z [==============================         ] 76% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:44.3631234Z [==============================         ] 77% Unzipping... x86_64/system.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:44.8184022Z [==============================         ] 77% Unzipping... x86_64/vendor.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2106405Z [==============================         ] 78% Unzipping... x86_64/vendor.img    
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2108137Z [=======================================] 100% Unzipping... x86_64/vendor.img   
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2167763Z 
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2582673Z 
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2584179Z Done. The Android toolchain (including the emulator) is installed under /usr/local/lib/android/sdk.
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2585286Z 
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2585582Z Add adb to your PATH (once):
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2586729Z   echo 'export PATH=$PATH:/usr/local/lib/android/sdk/platform-tools' >> ~/.zshrc
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2587481Z 
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2588042Z Run the Ziggy Rsbuild example with 'bun run android': it deploys to an attached emulator or
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.2588813Z device (verify with 'adb devices').
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3363414Z Ready: JDK at /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64, SDK at /usr/local/lib/android/sdk, NDK at /usr/local/lib/android/sdk/ndk/25.1.8937393.
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3394843Z ##[end-action id=__self_2.__run;outcome=success;conclusion=success;duration_ms=39384]
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3467273Z ##[group]Run actions/cache/restore@v4
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3467783Z with:
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3468159Z   path: .zig-cache
+app-build	UNKNOWN STEP	example-build/app
+app-build	UNKNOWN STEP	
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3468836Z   key: example-build-android-653433aa2c46832b6c21d46a5e9c142ec49777d5
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3469558Z   restore-keys: example-build-android-
+app-build	UNKNOWN STEP	
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3470072Z   enableCrossOsArchive: false
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3470804Z   fail-on-cache-miss: false
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3471239Z   lookup-only: false
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3471633Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3471962Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3472429Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3472956Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3473499Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3474094Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3479046Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3479733Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3480677Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3481252Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3482099Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.3482756Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.4606413Z (node:2748) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.4607507Z (Use `node --trace-deprecation ...` to show where the warning was created)
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.5254870Z Cache hit for restore-key: example-build-android-58bc283575644f07e189aa0cde8a544b008f3791
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.5355221Z (node:2748) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.7949011Z Received 23582382 of 23582382 (100.0%), 104.1 MBs/sec
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.7949625Z Cache Size: ~22 MB (23582382 B)
+app-build	UNKNOWN STEP	2026-11-15T05:20:45.7980135Z [command]/usr/bin/tar -xf /home/runner/work/_temp/769525b2-616f-4079-a304-fa96eb41b39b/cache.tzst -P -C /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild --use-compress-program unzstd
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0073970Z Cache restored successfully
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0161065Z Cache restored from key: example-build-android-58bc283575644f07e189aa0cde8a544b008f3791
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0337567Z ##[group]Run for cache_dir in .; do
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0337988Z ^[[36;1mfor cache_dir in .; do^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0338339Z ^[[36;1m    if [ -d "$cache_dir/.zig-cache" ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0338771Z ^[[36;1m        megabytes="$(du -sm "$cache_dir/.zig-cache" | cut -f1)"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0339272Z ^[[36;1m        echo "Restored Zig build cache of $cache_dir: ${megabytes} MB"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0339706Z ^[[36;1m        if [ "$megabytes" -ge 5120 ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0340204Z ^[[36;1m            mv "$cache_dir/.zig-cache" "$RUNNER_TEMP/stale-zig-cache-$(basename "$cache_dir")"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0341065Z ^[[36;1m            echo "Moved it aside to start a fresh one"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0341395Z ^[[36;1m        fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0341622Z ^[[36;1m    fi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0341840Z ^[[36;1mdone^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0362974Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0363341Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0363586Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0363839Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0364086Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0364373Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0364654Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0367216Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0367669Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0368138Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0368473Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0368983Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0369388Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0512010Z Restored Zig build cache of .: 108 MB
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0544193Z ##[group]Run if [ -d example-build/app ]; then
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0544626Z ^[[36;1mif [ -d example-build/app ]; then^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0545053Z ^[[36;1m    mv example-build/app "$RUNNER_TEMP/stale-example-build-app"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0545445Z ^[[36;1mfi^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0545831Z ^[[36;1mbun run build:android --arch "x86_64 arm64" --output-dir "$PWD/example-build/app"^[[0m
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0566568Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0566935Z env:
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0567158Z   BUN_VERSION: 1.3.14
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0567406Z   NODE_VERSION: 24.15.0
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0567656Z   RELEASE_PLATFORM: android
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0567946Z   RELEASE_PLATFORM_NAME: Android
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0568240Z   MISE_LOG_LEVEL: info
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0571168Z   GITHUB_TOKEN: ***
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0571624Z   MISE_TRUSTED_CONFIG_PATHS: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0572139Z   MISE_YES: 1
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0572483Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0573004Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0573418Z ##[endgroup]
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.0659992Z $ bash ./scripts/build-android.sh --arch "x86_64 arm64" --output-dir /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild/example-build/app
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.2568682Z Building the UI...
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.2595342Z $ bash ./scripts/bundle-ui.sh
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.3598797Z 
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.3599373Z Rsbuild v2.2.11
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.3599670Z 
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.4562227Z info    build started...
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.5288047Z ready   built in 0.07s
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.5332567Z 
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.5333082Z File (web)                             Size      Gzip   
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.5333744Z dist-build.3TQ4Cb/index.html           1.9 kB    0.81 kB
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.5334393Z dist-build.3TQ4Cb/static/js/index.js   12.9 kB   3.9 kB
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.5334716Z 
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.5335022Z                               Total:   14.8 kB   4.7 kB
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.5335309Z 
+app-build	UNKNOWN STEP	2026-11-15T05:20:46.5682754Z Building the Zig library for x86_64 (ReleaseSafe)...
+app-build	UNKNOWN STEP	2026-11-15T05:20:53.5499501Z The runtime library libjavascriptcoregtk-4.1.so.0 is not installed. Looked in:
+app-build	UNKNOWN STEP	2026-11-15T05:20:53.5500080Z   /usr/lib/x86_64-linux-gnu
+app-build	UNKNOWN STEP	2026-11-15T05:20:53.5500675Z   /usr/lib/aarch64-linux-gnu
+app-build	UNKNOWN STEP	2026-11-15T05:20:53.5501033Z   /lib/x86_64-linux-gnu
+app-build	UNKNOWN STEP	2026-11-15T05:20:53.5501316Z   /lib/aarch64-linux-gnu
+app-build	UNKNOWN STEP	2026-11-15T05:20:53.5501583Z   /usr/lib64
+app-build	UNKNOWN STEP	2026-11-15T05:20:53.5501803Z   /usr/lib
+app-build	UNKNOWN STEP	2026-11-15T05:20:53.5502010Z   /lib64
+app-build	UNKNOWN STEP	2026-11-15T05:20:53.5502215Z   /lib
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4341548Z Building the Zig library for arm64-v8a (ReleaseSafe)...
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4787379Z The runtime library libjavascriptcoregtk-4.1.so.0 is not installed. Looked in:
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4788237Z   /usr/lib/x86_64-linux-gnu
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4788734Z   /usr/lib/aarch64-linux-gnu
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4789174Z   /lib/x86_64-linux-gnu
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4789580Z   /lib/aarch64-linux-gnu
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4789983Z   /usr/lib64
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4790328Z   /usr/lib
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4791148Z   /lib64
+app-build	UNKNOWN STEP	2026-11-15T05:21:55.4791481Z   /lib
+app-build	UNKNOWN STEP	2026-11-15T05:23:01.9431218Z Synced into /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild/native/android/app/build/ziggy
+app-build	UNKNOWN STEP	2026-11-15T05:23:02.0729405Z Downloading https://services.gradle.org/distributions/gradle-8.7-all.zip
+app-build	UNKNOWN STEP	2026-11-15T05:23:03.6749490Z .....................10%.....................20%......................30%.....................40%......................50%.....................60%.....................70%......................80%.....................90%......................100%
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7338219Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7339376Z Welcome to Gradle 8.7!
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7345980Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7349424Z Here are the highlights of this release:
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7351426Z  - Compiling and testing with Java 22
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7352079Z  - Cacheable Groovy script compilation
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7352510Z  - New methods in lazy collection properties
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7352885Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7353400Z For more details see https://docs.gradle.org/8.7/release-notes.html
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.7353901Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:06.9324861Z Starting a Gradle Daemon (subsequent builds will be faster)
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9402449Z Configuration 'debugAnnotationProcessorClasspath' was resolved during configuration time.
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9405626Z This is a build performance and scalability issue.
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9406602Z See https://github.com/gradle/gradle/issues/2298
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9407524Z Run with --info for a stacktrace.
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9408474Z Configuration 'debugCompileClasspath' was resolved during configuration time.
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9409454Z This is a build performance and scalability issue.
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9410215Z See https://github.com/gradle/gradle/issues/2298
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9411245Z Run with --info for a stacktrace.
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9412159Z Configuration 'debugRuntimeClasspath' was resolved during configuration time.
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9413077Z This is a build performance and scalability issue.
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9413778Z See https://github.com/gradle/gradle/issues/2298
+app-build	UNKNOWN STEP	2026-11-15T05:23:28.9414436Z Run with --info for a stacktrace.
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.2335576Z Configuration 'androidApis' was resolved during configuration time.
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.2345192Z This is a build performance and scalability issue.
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.2346430Z See https://github.com/gradle/gradle/issues/2298
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.2347361Z Run with --info for a stacktrace.
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.2348685Z Configuration 'debugReverseMetadataValues' was resolved during configuration time.
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.2349976Z This is a build performance and scalability issue.
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.2351296Z See https://github.com/gradle/gradle/issues/2298
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.2352209Z Run with --info for a stacktrace.
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.4372371Z > Task :android:preBuild UP-TO-DATE
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.4373557Z > Task :android:preDebugBuild UP-TO-DATE
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.5328033Z > Task :app:checkZiggySync
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.5332580Z > Task :app:preBuild
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.5333443Z > Task :app:preDebugBuild
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.5334341Z > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.5335334Z > Task :android:generateDebugResValues
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.5336158Z > Task :app:generateDebugResValues
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.5336989Z > Task :app:javaPreCompileDebug
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.5337808Z > Task :android:writeDebugAarMetadata
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.6343804Z > Task :android:generateDebugResources
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.6372235Z > Task :app:generateDebugResources
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.7323489Z > Task :android:packageDebugResources
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.8323577Z > Task :app:packageDebugResources
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.8324450Z > Task :android:extractDeepLinksDebug
+app-build	UNKNOWN STEP	2026-11-15T05:23:35.9323979Z > Task :android:processDebugManifest
+app-build	UNKNOWN STEP	2026-11-15T05:23:36.7327573Z > Task :android:parseDebugLocalResources
+app-build	UNKNOWN STEP	2026-11-15T05:23:36.7355942Z > Task :app:parseDebugLocalResources
+app-build	UNKNOWN STEP	2026-11-15T05:23:36.9329501Z > Task :android:compileDebugLibraryResources
+app-build	UNKNOWN STEP	2026-11-15T05:23:36.9361536Z > Task :android:javaPreCompileDebug
+app-build	UNKNOWN STEP	2026-11-15T05:23:37.0323967Z > Task :android:mergeDebugShaders
+app-build	UNKNOWN STEP	2026-11-15T05:23:37.0328573Z > Task :app:checkDebugAarMetadata
+app-build	UNKNOWN STEP	2026-11-15T05:23:37.0329536Z > Task :android:generateDebugRFile
+app-build	UNKNOWN STEP	2026-11-15T05:23:37.0330745Z > Task :android:compileDebugShaders NO-SOURCE
+app-build	UNKNOWN STEP	2026-11-15T05:23:37.0351251Z > Task :app:mapDebugSourceSetPaths
+app-build	UNKNOWN STEP	2026-11-15T05:23:37.5372137Z > Task :app:createDebugCompatibleScreenManifests
+app-build	UNKNOWN STEP	2026-11-15T05:23:37.5373309Z > Task :app:extractDeepLinksDebug
+app-build	UNKNOWN STEP	2026-11-15T05:23:37.8341802Z > Task :app:processDebugMainManifest
+app-build	UNKNOWN STEP	2026-11-15T05:23:37.8371419Z > Task :app:mergeDebugResources
+app-build	UNKNOWN STEP	2026-11-15T05:23:38.2332052Z > Task :app:processDebugManifest
+app-build	UNKNOWN STEP	2026-11-15T05:23:38.3331819Z > Task :app:mergeDebugShaders
+app-build	UNKNOWN STEP	2026-11-15T05:23:38.3359643Z > Task :app:compileDebugShaders NO-SOURCE
+app-build	UNKNOWN STEP	2026-11-15T05:23:38.3361002Z > Task :app:generateDebugAssets UP-TO-DATE
+app-build	UNKNOWN STEP	2026-11-15T05:23:38.3381477Z > Task :app:processDebugJavaRes NO-SOURCE
+app-build	UNKNOWN STEP	2026-11-15T05:23:38.4359880Z > Task :app:processDebugManifestForPackage
+app-build	UNKNOWN STEP	2026-11-15T05:23:38.4391624Z > Task :app:checkDebugDuplicateClasses
+app-build	UNKNOWN STEP	2026-11-15T05:23:38.5371996Z > Task :app:desugarDebugFileDependencies
+app-build	UNKNOWN STEP	2026-11-15T05:23:40.5337503Z Note: /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild/native/android/.gradle/vcs-1/ziggy_bwq6iep1lvl2tb1ss5pgb3qu2/ziggy/packages/ziggy/native/android/src/main/java/dev/ziggy/nativeapp/ZiggyNativeApp.java uses or overrides a deprecated API.
+app-build	UNKNOWN STEP	2026-11-15T05:23:40.5339214Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:40.5340755Z > Task :android:compileDebugJavaWithJavac
+app-build	UNKNOWN STEP	2026-11-15T05:23:40.5422207Z Note: Recompile with -Xlint:deprecation for details.
+app-build	UNKNOWN STEP	2026-11-15T05:23:41.9331416Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:41.9336650Z > Task :app:processDebugResources FAILED
+app-build	UNKNOWN STEP	2026-11-15T05:23:42.2342209Z > Task :android:generateDebugAssets UP-TO-DATE
+app-build	UNKNOWN STEP	2026-11-15T05:23:42.3326733Z > Task :android:packageDebugAssets
+app-build	UNKNOWN STEP	2026-11-15T05:23:42.3351685Z > Task :android:processDebugJavaRes NO-SOURCE
+app-build	UNKNOWN STEP	2026-11-15T05:23:42.3371396Z > Task :android:bundleLibCompileToJarDebug
+app-build	UNKNOWN STEP	2026-11-15T05:23:42.3401730Z > Task :android:mergeDebugJniLibFolders
+app-build	UNKNOWN STEP	2026-11-15T05:23:42.3424450Z > Task :android:bundleLibRuntimeToDirDebug
+app-build	UNKNOWN STEP	2026-11-15T05:23:42.3451275Z > Task :android:mergeDebugNativeLibs NO-SOURCE
+app-build	UNKNOWN STEP	2026-11-15T05:23:42.3481182Z > Task :android:copyDebugJniLibsProjectOnly
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.8331308Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.8332074Z > Task :app:mergeExtDexDebug
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.8340290Z FAILURE: Build failed with an exception.
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.8341109Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.8341425Z * What went wrong:
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.8342194Z Execution failed for task ':app:processDebugResources'.
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.8343757Z > A failure occurred while executing com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$TaskAction
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9330216Z 36 actionable tasks: 36 executed
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9371377Z    > Android resource linking failed
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9373392Z      dev.ziggy.examplersbuild.app-mergeDebugResources-5:/values-v31/values-v31.xml:6: error: style attribute 'android:attr/postSplashScreenTheme' not found.
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9405546Z      error: failed linking references.
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9406291Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9406477Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9406856Z * Try:
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9407724Z > Run with --stacktrace option to get the stack trace.
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9408779Z > Run with --info or --debug option to get more log output.
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9409760Z > Run with --scan to get full insights.
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9410912Z > Get more help at https://help.gradle.org.
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9411532Z 
+app-build	UNKNOWN STEP	2026-11-15T05:23:45.9411920Z BUILD FAILED in 43s
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.3331647Z error: script "build:android" exited with code 1
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.3349511Z ##[error]Process completed with exit code 1.
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.3468577Z Post job cleanup.
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.5052195Z (node:3241) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.5054304Z (Use `node --trace-deprecation ...` to show where the warning was created)
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.5420960Z Post job cleanup.
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7007825Z [command]/usr/bin/git version
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7102352Z git version 2.56.1
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7163373Z Temporarily overriding HOME='/home/runner/work/_temp/a53c2a99-80e4-4797-80bd-972a3df056b1' before making global git config changes
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7165149Z Adding repository directory to the temporary git global config as a safe directory
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7212460Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ziggy-example-rsbuild/ziggy-example-rsbuild
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7242771Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7303238Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7753320Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7761490Z http.https://github.com/.extraheader
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7804908Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.7883582Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.8322754Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.8402275Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.9017715Z Cleaning up orphan processes
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.9546214Z Terminate orphan process: pid (3066) (java)
+app-build	UNKNOWN STEP	2026-11-15T05:23:46.9626437Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache/restore@v4, actions/cache@v4, actions/checkout@v4, actions/setup-java@v4, actions/setup-node@v4, jdx/mise-action@v2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

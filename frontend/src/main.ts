@@ -4,7 +4,7 @@ import { installSplashScreen } from "./lib/splash";
 import { ITestCommand, performTestCommand, testResultToJson } from "./lib/test-commands";
 
 const splash = installSplashScreen(document, {
-    background: "#FFFFFF",
+    background: "#0B1B2E",
     minimumDisplayMilliseconds: 2000,
     fadeDurationMilliseconds: 2000,
 });

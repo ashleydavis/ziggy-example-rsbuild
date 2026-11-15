@@ -5,7 +5,7 @@
     .title = "Ziggy Rsbuild example",
     .version = "1.0.0",
     .splash = .{
-        .background = "#FFFFFF",
+        .background = "#0B1B2E",
         .portrait = "assets/splash-portrait.png",
         .landscape = "assets/splash-landscape.png",
     },

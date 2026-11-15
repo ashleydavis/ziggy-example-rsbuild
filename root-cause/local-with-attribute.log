@@ -1,0 +1,77 @@
+date: 2026-11-15T22:26:06Z
+commit: f7e84f26866fa3017f28bc83ff4e18e287961413
+JAVA_HOME: /home/ash/.jdks/ms-17.0.19
+ANDROID_HOME: /home/ash/Android/Sdk
+--- values-v31/styles.xml ---
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+        <item name="android:postSplashScreenTheme">@android:style/Theme.DeviceDefault.NoActionBar</item>
+    </style>
+</resources>
+--- gradle ---
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.7/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Configuration 'debugCompileClasspath' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'debugRuntimeClasspath' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'androidApis' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'debugReverseMetadataValues' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+> Task :app:preBuild
+> Task :android:preBuild UP-TO-DATE
+> Task :android:preDebugBuild UP-TO-DATE
+> Task :app:preDebugBuild
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :android:writeDebugAarMetadata UP-TO-DATE
+> Task :android:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :android:generateDebugResources UP-TO-DATE
+> Task :android:packageDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :android:extractDeepLinksDebug UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :android:processDebugManifest UP-TO-DATE
+> Task :android:parseDebugLocalResources UP-TO-DATE
+> Task :android:generateDebugRFile UP-TO-DATE
+> Task :android:compileDebugLibraryResources UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugResources'.
+> A failure occurred while executing com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$TaskAction
+   > Android resource linking failed
+     dev.ziggy.examplersbuild.app-mergeDebugResources-5:/values-v31/values-v31.xml:6: error: style attribute 'android:attr/postSplashScreenTheme' not found.
+     error: failed linking references.
+
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 7s
+22 actionable tasks: 1 executed, 21 up-to-date
